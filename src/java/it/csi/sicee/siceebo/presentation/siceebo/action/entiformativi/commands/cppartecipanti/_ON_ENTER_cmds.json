@@ -1,0 +1,23 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["tblElencoPartecipanti","btnEliminaPartecipante","btnDettaglioPartecipante","bIndietro","bInserisciNuovoPartecipante","menu","txtMsgConfermaEliminaPartecipante","bIndietroPartecipanti","bEliminaPartecipante","lblTitoloCorso","lblSedeOperativa","lblNTotPartecipanti"],
+	"widgetsOff":[],
+	"widgetsShown":["tblElencoPartecipanti","btnEliminaPartecipante","btnDettaglioPartecipante","bIndietro","bInserisciNuovoPartecipante","menu","txtMsgConfermaEliminaPartecipante","bIndietroPartecipanti","bEliminaPartecipante","lblTitoloCorso","lblSedeOperativa","lblNTotPartecipanti"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["btnDettaglioPartecipante","bIndietro","menu","lblTitoloCorso","lblSedeOperativa"],
+	"widgetsOff":["lblNTotPartecipanti","tblElencoPartecipanti","btnEliminaPartecipante","bInserisciNuovoPartecipante","txtMsgConfermaEliminaPartecipante","bIndietroPartecipanti","bEliminaPartecipante"],
+	"widgetsShown":["tblElencoPartecipanti","btnEliminaPartecipante","btnDettaglioPartecipante","bIndietro","bInserisciNuovoPartecipante","menu","txtMsgConfermaEliminaPartecipante","bIndietroPartecipanti","bEliminaPartecipante","lblTitoloCorso","lblSedeOperativa","lblNTotPartecipanti"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK_RW","OK_R","KO"],
+	"nomeMetodo":"loadPartecipanti",
+	"appDataToStore":[]
+}

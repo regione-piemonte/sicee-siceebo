@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpRisultatoAce", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpDettaglioCertificatore", 
+	"pushCurrent":false
+}
+],
+	"esiti":["RIC_APE","RIC_APE_CERT"],
+	"nomeMetodo":"gestisciRitorno",
+	"appDataToStore":[]
+}

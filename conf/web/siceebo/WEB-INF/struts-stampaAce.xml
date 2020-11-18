@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="stampaAce" extends="jsp-package" namespace="/base/stampaAce">
+
+		
+<action name="cpStampaAce" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.CpStampaAceAction">
+	<result name="input">/jsp/cpStampaAce.jsp</result>
+	<result name="success">/jsp/cpStampaAce.jsp</result>
+	
+	<result name="GO_TO_cpRisultatoAceStampa" type="chain">
+		<param name="actionName">cpRisultatoAceStampa</param>
+		<param name="namespace">/base/stampaAce</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpRisultatoAceStampa" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.CpRisultatoAceStampaAction">
+	<result name="input">/jsp/cpRisultatoAceStampa.jsp</result>
+	<result name="success">/jsp/cpRisultatoAceStampa.jsp</result>
+	
+	<result name="GO_TO_cpStampaAce" type="chain">
+		<param name="actionName">cpStampaAce</param>
+		<param name="namespace">/base/stampaAce</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_SCARICA_ATTESTATO_S" type="redirect">
+		<param name="location">/base/scaricaAttestatoStampaGestore.do</param>
+	</result>
+	<result name="GO_TO_EX_APE" type="redirect">
+		<param name="location">compilaModificaApe.do</param>
+	</result>
+</action>
+
+		<!--PROTECTED REGION ID(R-1262720307) ENABLED START-->
+		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
+		
+		<action name="compilaModificaApe" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.CompilaModificaApe">
+			<result name="downloadFile" type="stream">
+	    		<param name="contentType">${contentType}</param>
+		    	<param name="inputName">inputStream</param>		   
+		    	<param name="bufferSize">3072</param>
+		    	<param name="contentDisposition">${contentDisposition}</param>
+			</result>			
+			<result name="KO" type="chain">cpStampaAce</result>
+		</action>
+
+		<action name="salvaModuloApeXml" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.AnnullaApeXml">
+			<result name="OK" type="chain">cpStampaAce</result>
+			<result name="KO" type="chain">cpStampaAce</result>
+		</action>
+		<action name="annullaApe" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.AnnullaApeXml">
+			<result name="OK" type="chain">cpStampaAce</result>
+			<result name="KO" type="chain">cpStampaAce</result>
+		</action>
+		
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>

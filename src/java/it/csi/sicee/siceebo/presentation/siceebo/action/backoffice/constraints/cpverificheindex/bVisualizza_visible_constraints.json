@@ -1,0 +1,26 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheIndex",
+  "nomeWidget": "bVisualizza",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.CustomUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheIndex",
+  "nomeWidget": "bVisualizza",
+	"methodNameSuffix": "IsAbilVisualizzaIndex"
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DeclarativeUIConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheIndex",
+  "nomeWidget": "bVisualizza",
+	"language": "beanshell",
+	"script": "model.appDataverificaIndex != null && model.appDataverificaIndex.size() > 0"
+}
+
+
+  ]
+}

@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheIndex",
+  "nomeWidget": "bVerificaMdp",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DeclarativeUIConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheIndex",
+  "nomeWidget": "bVerificaMdp",
+	"language": "beanshell",
+	"script": "model.appDataverificaIndex != null && model.appDataverificaIndex.size() > 0"
+}
+
+
+  ]
+}

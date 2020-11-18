@@ -1,0 +1,7 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"SCARICA_EXCEL",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/exportAceResultXls.do",
+	"binaryStream":false 
+}

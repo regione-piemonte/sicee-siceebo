@@ -1,0 +1,15 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.RefreshViewCommand" ,
+	"targetPanels": ["pCenter"], 
+	"targetWidgets":["bKoAutenticazione"],
+	"currentPanelName":"cpNonAbilitato" 
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"pres",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"http://www.sistemapiemonte.it/ambiente",
+	"binaryStream":false 
+}
+] 
+}

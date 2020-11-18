@@ -1,0 +1,14 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpCorsi", 
+	"pushCurrent":false
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"salvaCorso",
+	"appDataToStore":[]
+}

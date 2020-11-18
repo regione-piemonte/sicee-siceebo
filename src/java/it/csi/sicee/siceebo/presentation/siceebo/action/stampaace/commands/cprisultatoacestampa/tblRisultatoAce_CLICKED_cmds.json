@@ -1,0 +1,23 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"SCARICA_ATTESTATO_S",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/scaricaAttestatoStampaGestore.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"APE",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"compilaModificaApe.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["ATTESTATO","BOZZA","KO"],
+	"nomeMetodo":"preparaScaricoModulo",
+	"appDataToStore":[]
+}

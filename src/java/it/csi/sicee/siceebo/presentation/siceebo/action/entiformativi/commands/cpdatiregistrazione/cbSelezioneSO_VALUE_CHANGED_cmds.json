@@ -1,0 +1,13 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.RefreshViewCommand" ,
+	"targetPanels": ["wpDatiRegistrazione1","wpContatti"], 
+	"targetWidgets":["cbTipoSoggetto","tfCodFormReg","tfRagSociale","tfPIVA","cbReg","cbProv","cbCom","tfIndirizzo","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb"],
+	"currentPanelName":"cpDatiRegistrazione" 
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"cambiaSedeOperativa",
+	"appDataToStore":[]
+}

@@ -1,0 +1,13 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.RefreshViewCommand" ,
+	"targetPanels": ["wpCorsi"], 
+	"targetWidgets":["tblElencoCorsi"],
+	"currentPanelName":"cpCorsi" 
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"cambiaSedeOperativa",
+	"appDataToStore":[]
+}

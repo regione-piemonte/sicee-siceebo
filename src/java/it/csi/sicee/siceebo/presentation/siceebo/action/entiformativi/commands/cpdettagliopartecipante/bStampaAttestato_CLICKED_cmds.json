@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"STAMPA_ATTESTATO",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/cpStampaAttestato.do",
+	"binaryStream":false 
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"controlloStampaAttestato",
+	"appDataToStore":[]
+}

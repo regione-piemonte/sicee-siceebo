@@ -1,0 +1,12 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpDettaglioPartecipante", 
+	"pushCurrent":false
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"inserisciNuovoPartecipante",
+	"appDataToStore":[]
+}

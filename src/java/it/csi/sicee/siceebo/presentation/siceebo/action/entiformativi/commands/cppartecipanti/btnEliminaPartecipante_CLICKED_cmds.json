@@ -1,0 +1,13 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ShowDialogCommand" ,
+	"name":"dlgConfermaEliminaPartecipante"
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"confermaEliminaPartecipante",
+	"appDataToStore":[]
+}

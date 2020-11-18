@@ -1,0 +1,20 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["ricercaAce","aceList","codAceSelezionato","codAttestatoDaStampare","uidDaStampare"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpDettaglioCertificatore", 
+	"pushCurrent":false
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"visualizzaDettaglio",
+	"appDataToStore":[]
+}

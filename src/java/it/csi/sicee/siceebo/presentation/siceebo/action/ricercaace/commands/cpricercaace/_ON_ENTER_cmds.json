@@ -1,0 +1,57 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK"],
+	"nomeMetodo":"gestisciComboInit",
+	"appDataToStore":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cbRicAceClasse","cbRicAceDestUso","cbRicAceMotRilascio","rbStato","ptNotaParametriOR","tfRicAceVDa","tfRicAceVA","tfRicAceSuDa","tfRicAceSuA","tfRicAceVSuDa","tfRicAceVSuA","tfRicAceFattoreFormaDa","tfRicAceFattoreFormaA","tfRicAceTrasmSupOpacheDa","tfRicAceTrasmSupOpacheA","tfRicAceTrasmSupTraspDa","tfRicAceTrasmSupTraspA","cbRicAceFabbisognoSupIndice","tfRicAceRendMedioAcsDa","tfRicAceRendMedioAcsA","tfRicAceRendMedioImpTermicoDa","tfRicAceRendMedioImpTermicoA","tfRicAceFabAcsSuDa","tfRicAceFabAcsSuA","tfRicAceIndiceEplDa","tfRicAceIndiceEplA","cbRicAceFabbisognoAcsDiverso","tfMotivazioneCtu","ptNotaC"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpNewApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpNewApe"}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpOldApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": null}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.VisibilityCommand" ,
+	"show":true,
+	"targetsWidgets":["cbRicAceClasse","cbRicAceDestUso","cbRicAceMotRilascio","rbStato","ptNotaParametriOR","tfRicAceVDa","tfRicAceVA","tfRicAceSuDa","tfRicAceSuA","tfRicAceVSuDa","tfRicAceVSuA","tfRicAceFattoreFormaDa","tfRicAceFattoreFormaA","tfRicAceTrasmSupOpacheDa","tfRicAceTrasmSupOpacheA","tfRicAceTrasmSupTraspDa","tfRicAceTrasmSupTraspA","cbRicAceFabbisognoSupIndice","tfRicAceRendMedioAcsDa","tfRicAceRendMedioAcsA","tfRicAceRendMedioImpTermicoDa","tfRicAceRendMedioImpTermicoA","tfRicAceFabAcsSuDa","tfRicAceFabAcsSuA","tfRicAceIndiceEplDa","tfRicAceIndiceEplA","cbRicAceFabbisognoAcsDiverso"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["ptNotaC","tfMotivazioneCtu"],
+	"targetsMenuElement":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpNewApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpNewApe"}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpOldApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": null}
+] 
+}
+],
+	"esiti":["LETTORE","ALL"],
+	"nomeMetodo":"gestisciVisRuolo",
+	"appDataToStore":[]
+}
+] 
+}

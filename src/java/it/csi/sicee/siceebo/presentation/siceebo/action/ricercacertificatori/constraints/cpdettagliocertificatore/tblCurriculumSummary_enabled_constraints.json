@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDettaglioCertificatore",
+  "nomeWidget": "tblCurriculumSummary",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDettaglioCertificatore",
+  "nomeWidget": "tblCurriculumSummary",
+  "fixedValue": true
+}
+
+  ]
+}

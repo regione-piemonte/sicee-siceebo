@@ -1,0 +1,18 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["idCertificatoreSel","certificatoreList","ricercaCertificatori","certificatoreDett","ricercaAce","aceList","codAceSelezionato","codAttestatoDaStampare","uidDaStampare"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpRicercaCertificatoriAdv", 
+	"pushCurrent":false
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"initRicCertificatoriAdv",
+	"appDataToStore":["appDataidCertificatoreSel","appDatacertificatoreList","appDataricercaCertificatori","appDatacertificatoreDett","appDataricercaAce","appDataaceList","appDatacodAceSelezionato","appDatacodAttestatoDaStampare","appDatauidDaStampare"]
+}
+] 
+}

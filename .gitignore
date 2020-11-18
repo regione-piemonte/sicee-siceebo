@@ -1,0 +1,7 @@
+/bin/
+.classpath
+.project
+buildRepart.xml
+.settings/org.eclipse.jdt.core.prefs
+/dist/
+/build/

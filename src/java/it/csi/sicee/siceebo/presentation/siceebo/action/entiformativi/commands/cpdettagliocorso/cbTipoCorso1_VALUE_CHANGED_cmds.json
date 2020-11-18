@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["rbTipoCorso2"],
+	"targetsMenuElement":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["rbTipoCorso2"],
+	"targetsMenuElement":[]
+}
+],
+	"esiti":["ABILITA","DISABILITA"],
+	"nomeMetodo":"abilitaTipoCorso2",
+	"appDataToStore":[]
+}

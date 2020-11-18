@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="autodetect">
+	<!-- bean di business logic -->
+	
+	<!-- bean di facade -->
+	<bean id="springBackEnd" class="it.csi.sicee.siceebo.business.BackEndFacade">
+		<property name="CPBECpRicercaCertificatori">
+			<ref bean="CPBECpRicercaCertificatori"/>
+		</property>
+		<property name="CPBECpRicercaCertificatoriAdv">
+			<ref bean="CPBECpRicercaCertificatoriAdv"/>
+		</property>
+		<property name="CPBECpRisultatoCertificatori">
+			<ref bean="CPBECpRisultatoCertificatori"/>
+		</property>
+		<property name="CPBECpRisultatoCertificatoriAdv">
+			<ref bean="CPBECpRisultatoCertificatoriAdv"/>
+		</property>
+		<property name="CPBECpDettaglioCertificatore">
+			<ref bean="CPBECpDettaglioCertificatore"/>
+		</property>
+		<property name="CPBECpDatiRegistrazione">
+			<ref bean="CPBECpDatiRegistrazione"/>
+		</property>
+		<property name="CPBECpCorsi">
+			<ref bean="CPBECpCorsi"/>
+		</property>
+		<property name="CPBECpDettaglioCorso">
+			<ref bean="CPBECpDettaglioCorso"/>
+		</property>
+		<property name="CPBECpPartecipanti">
+			<ref bean="CPBECpPartecipanti"/>
+		</property>
+		<property name="CPBECpDettaglioPartecipante">
+			<ref bean="CPBECpDettaglioPartecipante"/>
+		</property>
+		<property name="CPBECpRicercaAce">
+			<ref bean="CPBECpRicercaAce"/>
+		</property>
+		<property name="CPBECpRisultatoAce">
+			<ref bean="CPBECpRisultatoAce"/>
+		</property>
+		<property name="CPBECpAnnullaAce">
+			<ref bean="CPBECpAnnullaAce"/>
+		</property>
+		<property name="CPBECpSostitutiAce">
+			<ref bean="CPBECpSostitutiAce"/>
+		</property>
+		<property name="CPBECpDettaglioAttestato">
+			<ref bean="CPBECpDettaglioAttestato"/>
+		</property>
+		<property name="CPBECpStampaAce">
+			<ref bean="CPBECpStampaAce"/>
+		</property>
+		<property name="CPBECpRisultatoAceStampa">
+			<ref bean="CPBECpRisultatoAceStampa"/>
+		</property>
+		<property name="CPBECpHome">
+			<ref bean="CPBECpHome"/>
+		</property>
+		<property name="CPBECpNonAbilitato">
+			<ref bean="CPBECpNonAbilitato"/>
+		</property>
+		<property name="CPBECpEsci">
+			<ref bean="CPBECpEsci"/>
+		</property>
+		<property name="CPBECpDisabled">
+			<ref bean="CPBECpDisabled"/>
+		</property>
+		<property name="CPBECpTransazioniMdp">
+			<ref bean="CPBECpTransazioniMdp"/>
+		</property>
+		<property name="CPBECpVerificheIndex">
+			<ref bean="CPBECpVerificheIndex"/>
+		</property>
+		<property name="CPBECpVerificheActa">
+			<ref bean="CPBECpVerificheActa"/>
+		</property>
+	</bean>
+	
+	<!-- bean relativi ai singoli content panel -->
+	<bean id="CPBECpRicercaCertificatori" class="it.csi.sicee.siceebo.business.ricercacertificatori.CPBECpRicercaCertificatori">
+	</bean>
+	<bean id="CPBECpRicercaCertificatoriAdv" class="it.csi.sicee.siceebo.business.ricercacertificatori.CPBECpRicercaCertificatoriAdv">
+	</bean>
+	<bean id="CPBECpRisultatoCertificatori" class="it.csi.sicee.siceebo.business.ricercacertificatori.CPBECpRisultatoCertificatori">
+	</bean>
+	<bean id="CPBECpRisultatoCertificatoriAdv" class="it.csi.sicee.siceebo.business.ricercacertificatori.CPBECpRisultatoCertificatoriAdv">
+	</bean>
+	<bean id="CPBECpDettaglioCertificatore" class="it.csi.sicee.siceebo.business.ricercacertificatori.CPBECpDettaglioCertificatore">
+	</bean>
+	<bean id="CPBECpDatiRegistrazione" class="it.csi.sicee.siceebo.business.entiformativi.CPBECpDatiRegistrazione">
+	</bean>
+	<bean id="CPBECpCorsi" class="it.csi.sicee.siceebo.business.entiformativi.CPBECpCorsi">
+	</bean>
+	<bean id="CPBECpDettaglioCorso" class="it.csi.sicee.siceebo.business.entiformativi.CPBECpDettaglioCorso">
+	</bean>
+	<bean id="CPBECpPartecipanti" class="it.csi.sicee.siceebo.business.entiformativi.CPBECpPartecipanti">
+	</bean>
+	<bean id="CPBECpDettaglioPartecipante" class="it.csi.sicee.siceebo.business.entiformativi.CPBECpDettaglioPartecipante">
+	</bean>
+	<bean id="CPBECpRicercaAce" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpRicercaAce">
+	</bean>
+	<bean id="CPBECpRisultatoAce" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpRisultatoAce">
+	</bean>
+	<bean id="CPBECpAnnullaAce" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpAnnullaAce">
+	</bean>
+	<bean id="CPBECpSostitutiAce" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpSostitutiAce">
+	</bean>
+	<bean id="CPBECpDettaglioAttestato" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpDettaglioAttestato">
+	</bean>
+	<bean id="CPBECpStampaAce" class="it.csi.sicee.siceebo.business.stampaace.CPBECpStampaAce">
+	</bean>
+	<bean id="CPBECpRisultatoAceStampa" class="it.csi.sicee.siceebo.business.stampaace.CPBECpRisultatoAceStampa">
+	</bean>
+	<bean id="CPBECpHome" class="it.csi.sicee.siceebo.business.main.CPBECpHome">
+	</bean>
+	<bean id="CPBECpNonAbilitato" class="it.csi.sicee.siceebo.business.main.CPBECpNonAbilitato">
+	</bean>
+	<bean id="CPBECpEsci" class="it.csi.sicee.siceebo.business.main.CPBECpEsci">
+	</bean>
+	<bean id="CPBECpDisabled" class="it.csi.sicee.siceebo.business.main.CPBECpDisabled">
+	</bean>
+	<bean id="CPBECpTransazioniMdp" class="it.csi.sicee.siceebo.business.backoffice.CPBECpTransazioniMdp">
+	</bean>
+	<bean id="CPBECpVerificheIndex" class="it.csi.sicee.siceebo.business.backoffice.CPBECpVerificheIndex">
+	</bean>
+	<bean id="CPBECpVerificheActa" class="it.csi.sicee.siceebo.business.backoffice.CPBECpVerificheActa">
+	</bean>
+	
+	
+	
+	<!-- helper per le funzioni di securizzazione -->
+	<bean id="springSecurityHelper" class="it.csi.sicee.siceebo.business.SecurityHelper">
+		<!-- protocollo di interazione con il PEP (EJB|WS) utilizzato solo se la security non e' custom --> 
+		<property name="PDProtocol" value="@IRIDE_PD_PROTOCOL@" />
+	</bean>
+	
+	
+	
+	
+	<!--PROTECTED REGION ID(R585863764) ENABLED START-->
+
+	<bean id="certificatoreMgr" class="it.csi.sicee.siceebo.business.facade.CertificatoreMgr">
+		<property name="siceeDTitoloDao">
+			<ref bean="SiceeDTitoloDao"/>
+		</property>
+		<property name="optimizedFindCertificatoriDao">
+			<ref bean="OptimizedFindCertificatoriDao"/>
+		</property>
+		<property name="siceeTCertificatoreDao">
+			<ref bean="SiceeTCertificatoreDao"/>
+		</property>
+		<property name="siceeTParametriDao">
+			<ref bean="SiceeTParametriDao"/>
+		</property>
+		<property name="siceeDIstruzioneDao">
+			<ref bean="SiceeDIstruzioneDao"/>
+		</property>
+		<property name="siceeDBloccoCertificatoreDao">
+			<ref bean="SiceeDBloccoCertificatoreDao"/>
+		</property>
+		
+		
+	</bean>
+
+	<bean id="aceMgr" class="it.csi.sicee.siceebo.business.facade.AceMgr">
+		<property name="siceeDMotivoRilascioDao">
+			<ref bean="SiceeDMotivoRilascioDao"/>
+		</property>
+		<property name="siceeDClasseEnergeticaDao">
+			<ref bean="SiceeDClasseEnergeticaDao"/>
+		</property>
+		<property name="siceeDDestUsoDao">
+			<ref bean="SiceeDDestUsoDao"/>
+		</property>
+		<property name="siceeTExportBoDao">
+			<ref bean="SiceeTExportBoDao"/>
+		</property>
+		<property name="siceeTCertificatoDao">
+			<ref bean="SiceeTCertificatoDao"/>
+		</property>
+		<property name="siceeTParametriDao">
+			<ref bean="SiceeTParametriDao"/>
+		</property>
+		<property name="siceeDStatoCertDao">
+			<ref bean="SiceeDStatoCertDao"/>
+		</property>
+		<property name="siceeDDestUso2015Dao">
+			<ref bean="SiceeDDestUso2015Dao"/>
+		</property>
+	</bean>
+
+	<bean id="soaIntegrationMgr" class="it.csi.sicee.siceebo.business.facade.SOAIntegrationMgr">
+		<!--property name="siceeTDocumentoDao">
+			<ref bean="SiceeTDocumentoDao"/>
+		</property>
+		<property name="siceeTDatiFirmaDao">
+			<ref bean="SiceeTDatiFirmaDao"/>
+		</property>
+		<property name="siceeTParametriDao">
+			<ref bean="SiceeTParametriDao"/>
+		</property>		
+		<property name="siceeTVerifyReportDao">
+			<ref bean="SiceeTVerifyReportDao"/>
+		</property-->
+	</bean>
+
+	<bean id="backOfficeMgr" class="it.csi.sicee.siceebo.business.facade.BackOfficeMgr">
+		<property name="siceeTTransazione2018Dao">
+			<ref bean="SiceeTTransazione2018Dao"/>
+		</property>
+		<property name="optimizedSiceeTTransazione2018Dao">
+			<ref bean="OptimizedSiceeTTransazione2018Dao"/>
+		</property>
+	</bean>
+
+	<bean id="activationMgr" class="it.csi.sicee.siceebo.business.facade.ActivationMgr">
+	</bean>
+
+	<bean id="miscMgr" class="it.csi.sicee.siceebo.business.facade.MiscMgr">
+		<property name="siceeTParametriDao">
+			<ref bean="SiceeTParametriDao"/>
+		</property>
+		<property name="siceeDTipoCorsoDao">
+			<ref bean="SiceeDTipoCorsoDao"/>
+		</property>
+	</bean>
+
+	<bean id="moduloBuilder" class="it.csi.sicee.siceebo.business.pdf.ModuloBuilder">
+		</bean>	
+
+	<bean id="serviziMgr" class="it.csi.sicee.siceebo.business.facade.ServiziMgr">
+		</bean>	
+
+	<bean id="certificatoMgr" class="it.csi.sicee.siceebo.business.facade.CertificatoMgr">
+		</bean>	
+
+	<!--PROTECTED REGION END-->
+
+</beans>

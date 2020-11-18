@@ -1,0 +1,26 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheActa",
+  "nomeWidget": "bRisolvi",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.CustomUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheActa",
+  "nomeWidget": "bRisolvi",
+	"methodNameSuffix": "IsAbilRisolvereActa"
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DeclarativeUIConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpVerificheActa",
+  "nomeWidget": "bRisolvi",
+	"language": "beanshell",
+	"script": "model.appDataverificaActa != null && model.appDataverificaActa.size() > 0"
+}
+
+
+  ]
+}

@@ -1,0 +1,18 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["ricercaAce","aceList"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpRicercaAce", 
+	"pushCurrent":false
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"initRicACE",
+	"appDataToStore":["appDataricercaAce","appDataaceList"]
+}
+] 
+}

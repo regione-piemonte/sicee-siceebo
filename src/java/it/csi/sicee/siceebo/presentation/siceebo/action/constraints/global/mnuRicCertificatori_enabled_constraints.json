@@ -1,0 +1,35 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatori",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.RoleBasedUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatori",
+	"roleCode": "LETTORE_SICEEBO",
+	"domainCode": "ARPA"
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.RoleBasedUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatori",
+	"roleCode": "LETTORE_CTU_SICEEBO",
+	"domainCode": "UTENTI_ESTERNI"
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.RoleBasedUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatori",
+	"roleCode": "LETTORE_SICEEBO",
+	"domainCode": "REG_PMN"
+}
+
+
+  ]
+}

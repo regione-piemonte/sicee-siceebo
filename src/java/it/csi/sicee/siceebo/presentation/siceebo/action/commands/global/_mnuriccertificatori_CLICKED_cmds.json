@@ -1,0 +1,18 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["certificatoreList","ricercaCertificatori"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpRicercaCertificatori", 
+	"pushCurrent":false
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"initRicCertificatori",
+	"appDataToStore":["appDatacertificatoreList","appDataricercaCertificatori"]
+}
+] 
+}

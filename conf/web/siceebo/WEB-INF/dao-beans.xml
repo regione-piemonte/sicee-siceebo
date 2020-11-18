@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!--PROTECTED REGION ID(R-272746236) ENABLED START-->
+	<!-- 
+		Esempio di configurazione di datasource, transaction manager, incrementer e dao 
+	-->
+	<!-- bean del datasource 
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/GericaDS" />
+		<property name="proxyInterface" value="javax.sql.DataSource" />
+	</bean>
+	-->
+	
+		<bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/siceeboDS" />
+		<property name="proxyInterface" value="javax.sql.DataSource" />
+
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager"
+		proxy-target-class="false" />
+	
+	<!-- JBOSS -->
+	<bean id="txManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+	          <property name="defaultTimeout" value="300" />            
+  	</bean>
+	
+	
+	<!-- BEA -->
+	<!--bean id="txManager"
+		class="org.springframework.transaction.jta.WebLogicJtaTransactionManager">
+		<property name="transactionManagerName" value="javax.transaction.TransactionManager" />
+		<property name="defaultTimeout" value="300" />            
+	</bean-->
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="*" isolation="DEFAULT"
+				propagation="REQUIRED" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+
+	<bean id="SiceeDTitoloDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTitoloDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeDIstruzioneDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDIstruzioneDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeDMotivoRilascioDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDMotivoRilascioDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeDClasseEnergeticaDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDClasseEnergeticaDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeDDestUsoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDDestUsoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="OptimizedFindCertificatoriDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.OptimizedFindCertificatoriDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTExportBoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTExportBoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTCertificatoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTCertificatoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTCertificatoreDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTCertificatoreDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTParametriDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTParametriDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeDStatoCertDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDStatoCertDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeDDestUso2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDDestUso2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeDTipoenteform2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTipoenteform2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTEnteformCf2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTEnteformCf2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTEnteformSl2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTEnteformSl2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="incrementer" ref="SiceeTEnteformSl2015_ID_Incrementer" />
+	</bean>
+	
+	<bean id="SiceeTEnteformSl2015_ID_Incrementer"
+		class="org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_SICEE_T_ENTEFORM_SL_2015</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SiceeTEnteform2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTEnteform2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="incrementer" ref="SiceeTEnteform2015_ID_Incrementer" />
+	</bean>
+	
+	<bean id="SiceeTEnteform2015_ID_Incrementer"
+		class="org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_SICEE_T_ENTEFORM_2015</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SiceeTCorso2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTCorso2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="incrementer" ref="SiceeTCorso2015_ID_Incrementer" />
+	</bean>
+
+	<bean id="SiceeTCorso2015_ID_Incrementer"
+		class="org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_SICEE_T_CORSO_2015</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SiceeTPartecipante2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTPartecipante2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="incrementer" ref="SiceeTPartecipante2015_ID_Incrementer" />
+	</bean>
+
+	<bean id="SiceeTPartecipante2015_ID_Incrementer"
+		class="org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_SICEE_T_PARTECIPANTE_2015</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SiceeDTipoIstruzioneDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTipoIstruzioneDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTCertXml2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTCertXml2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+
+	<bean id="SiceeTImpdatiXml2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTImpdatiXml2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+
+
+	<bean id="SiceeTFoto2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTFoto2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTDatiGeneraliDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTDatiGeneraliDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTAziendaDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTAziendaDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeLRicercheCtuDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeLRicercheCtuDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTImportDati2015Dao" 
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTImportDati2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTAltreInfoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTAltreInfoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeDBloccoCertificatoreDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDBloccoCertificatoreDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTDocumentoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTDocumentoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeDTipoDocumentoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTipoDocumentoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="OptimizedSiceeTCorso2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.OptimizedSiceeTCorso2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	
+	<bean id="SiceeTSiapeDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTSiapeDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTRifIndex2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTRifIndex2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTTransazione2018Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTTransazione2018DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="OptimizedSiceeTTransazione2018Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.OptimizedSiceeTTransazione2018DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeDTipoDocIndex2015Dao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTipoDocIndex2015DaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTAnnullamentoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeLAnnullamentoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="incrementer" ref="SiceeLAnnullamento_ID_Incrementer" />
+	</bean>
+
+	<bean id="SiceeLAnnullamento_ID_Incrementer"
+		class="org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer">
+		<constructor-arg>
+			<ref bean="myDataSource" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>SEQ_SICEE_L_ANNULLAMENTO</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="SiceeDTipoCorsoDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeDTipoCorsoDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<bean id="SiceeTActaDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTActaDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	
+	<bean id="SiceeTParametriActaDao"
+		class="it.csi.sicee.siceebo.business.dao.dao.spring.SiceeTParametriActaDaoImpl"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+		
+	<!--PROTECTED REGION END-->
+</beans>

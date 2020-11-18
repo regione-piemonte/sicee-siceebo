@@ -1,0 +1,22 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["ricercaAce","aceList","codAceSelezionato"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRisApeCert",
+	"contentPanelName":"cpDettaglioCertificatore",
+	"itemName": null}
+] 
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"inizializzaRicApeCert",
+	"appDataToStore":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+] 
+}

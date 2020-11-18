@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDatiRegistrazione",
+  "nomeWidget": "tfIndirizzo",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDatiRegistrazione",
+  "nomeWidget": "tfIndirizzo",
+  "fixedValue": true
+}
+
+  ]
+}

@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpPartecipanti",
+  "nomeWidget": "bInserisciNuovoPartecipante",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpPartecipanti",
+  "nomeWidget": "bInserisciNuovoPartecipante",
+  "fixedValue": true
+}
+
+  ]
+}

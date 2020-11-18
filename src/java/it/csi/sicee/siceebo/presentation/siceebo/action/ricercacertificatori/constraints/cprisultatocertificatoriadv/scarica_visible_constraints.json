@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpRisultatoCertificatoriAdv",
+  "nomeWidget": "scarica",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpRisultatoCertificatoriAdv",
+  "nomeWidget": "scarica",
+  "fixedValue": true
+}
+
+  ]
+}

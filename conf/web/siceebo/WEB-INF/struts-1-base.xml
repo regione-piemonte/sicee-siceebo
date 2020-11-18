@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="base" extends="jsp-package" namespace="/base">
+
+		<!--PROTECTED REGION ID(R1672727510) ENABLED START-->
+
+ <action name="cpStampaAttestato" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpStampaAttestatoAction">
+	<result name="report" type="stream">         
+         <param name="inputName">inputStream</param>	   
+   	   	 <!--param name="bufferSize">1024</param-->
+   	   	 <param name="contentType">application/pdf</param>
+   	   	 <param name="contentDisposition">attachment; filename=attestato.pdf</param>
+        </result>
+        <result name="success" />
+</action>
+
+<action name="exportCertificatoriResultXls" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercacertificatori.ExportResultXlsAction">
+	<result name="report" type="stream">         
+         <param name="inputName">inputStream</param>	   
+   	   	 <!--param name="bufferSize">1024</param-->
+   	   	 <param name="contentType">application/vnd.ms-excel</param>
+   	   	 <param name="contentDisposition">attachment;filename="elencoCertificatori.xls"</param>
+        </result>
+        <result name="success" />
+</action>
+
+<action name="exportAceResultXls" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercaace.ExportResultXlsAction">
+	<result name="report" type="stream">         
+         <param name="inputName">inputStream</param>	   
+   	   	 <!-- param name="bufferSize">1024</param-->
+   	   	 <param name="contentType">application/vnd.ms-excel</param>
+   	   	 <param name="contentDisposition">attachment;filename="elencoAce.xls"</param>
+        </result>
+        <result name="success" />
+</action>
+
+	<action name="scaricaAttestato" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercaace.ScaricaAttestatoAction">
+        <result name="success" type="stream">
+        	<param name="inputName">inputStream</param>	   
+   	   	 	<!--param name="bufferSize">1024</param-->
+   	   	 	<param name="contentType">${contentType}</param>
+   	   	 <param name="contentDisposition">${contentDisposition}</param>
+        </result>
+    </action>
+    
+    <action name="scaricaRicevuta" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercacertificatori.ScaricaRicevutaAction">
+	<result name="report" type="stream">         
+         <param name="inputName">inputStream</param>	   
+   	   	 <!--param name="bufferSize">1024</param-->
+   	   	 <param name="contentType">application/pdf</param>
+   	   	 <param name="contentDisposition">attachment; filename=ricevuta_trasmissione.pdf</param>
+        </result>
+        <result name="success" />
+	</action>
+	
+	<action name="scaricaTracciatoXml" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercacertificatori.ScaricaTracciatoXmlAction">
+	<result name="report" type="stream">         
+         <param name="inputName">inputStream</param>	   
+   	   	 <!--param name="bufferSize">1024</param-->
+   	   	 <param name="contentType">application/x-download</param>
+   	   	 <param name="contentDisposition">attachment; filename=tracciato_xml.xml</param>
+        </result>
+        <result name="success" />
+	</action>
+    
+    
+    <action name="scaricaAttestatoStampaGestore" class="it.csi.sicee.siceebo.presentation.siceebo.action.stampaace.ScaricaAttestatoStampaGestoreAction">
+        <result name="success" type="stream">
+        	<param name="inputName">inputStream</param>	   
+   	   	 	<!--param name="bufferSize">1024</param-->
+   	   	 	<!-- param name="contentType">${contentType}</param -->
+   	   	 <param name="contentDisposition">${contentDisposition}</param>
+        </result>
+        <result name="none" type="chain">cpRisultatoAceStampa</result>
+    </action>
+
+	<action name="scaricaDocumento" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercacertificatori.ScaricaDocumentoAction">
+        <result name="success" type="stream">
+        	<param name="inputName">inputStream</param>	   
+   	   	 	<!--param name="bufferSize">1024</param-->
+   	   	 	<param name="contentType">${contentType}</param>
+   	   	 <param name="contentDisposition">${contentDisposition}</param>
+        </result>
+    </action>
+    
+		<!--PROTECTED REGION END-->
+	</package>
+</struts>

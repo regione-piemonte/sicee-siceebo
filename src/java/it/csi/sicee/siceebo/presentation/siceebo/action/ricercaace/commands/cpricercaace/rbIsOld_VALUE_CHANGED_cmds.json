@@ -1,0 +1,31 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpOldApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpOldApe"}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpNewApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": null}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpNewApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpNewApe"}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpOldApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": null}
+] 
+}
+],
+	"esiti":["OLD","NEW"],
+	"nomeMetodo":"gestisciApeOldAndNew",
+	"appDataToStore":[]
+}

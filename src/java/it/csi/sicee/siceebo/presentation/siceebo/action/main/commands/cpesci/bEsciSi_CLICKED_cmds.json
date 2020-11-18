@@ -1,0 +1,7 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"pres",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/secure/Logout!ssoLogout.do",
+	"binaryStream":false 
+}

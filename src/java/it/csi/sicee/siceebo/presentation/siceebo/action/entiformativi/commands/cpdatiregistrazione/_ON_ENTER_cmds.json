@@ -1,0 +1,67 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["menu","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","bIndietro","bSalva","cbTipoSoggetto","tfCodFormReg","cbSelezioneSO","fileImmagineLogo","btnCaricaLogo","txtNotaA","txtPresenzaLogo","txtNotaNull"],
+	"widgetsOff":["tfRagSociale","tfPIVA"],
+	"widgetsShown":["menu","tfRagSociale","tfPIVA","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","bIndietro","bSalva","cbTipoSoggetto","tfCodFormReg","cbSelezioneSO","fileImmagineLogo","btnCaricaLogo","txtNotaA","txtPresenzaLogo","txtNotaNull"],
+	"widgetsHidden":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["tfCodFormReg"],
+	"targetsMenuElement":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["tfCodFormReg"],
+	"targetsMenuElement":[]
+}
+],
+	"esiti":["ABILITA","DISABILITA"],
+	"nomeMetodo":"abilitaCodFormRegInit",
+	"appDataToStore":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["vVerifInd","cbSceltaInd"],
+	"targetsMenuElement":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":false,
+	"targetsWidgets":["vVerifInd","cbSceltaInd"],
+	"targetsMenuElement":[]
+}
+],
+	"esiti":["ABILITA","DISABILITA"],
+	"nomeMetodo":"abilitaVerificaIndirizziInit",
+	"appDataToStore":[]
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["menu","bIndietro"],
+	"widgetsOff":["cbTipoSoggetto","tfRagSociale","tfPIVA","cbSelezioneSO","tfCodFormReg","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","fileImmagineLogo","btnCaricaLogo","txtPresenzaLogo","txtNotaNull","txtNotaA","bSalva"],
+	"widgetsShown":["menu","tfRagSociale","tfPIVA","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","bIndietro","bSalva","cbTipoSoggetto","tfCodFormReg","cbSelezioneSO","fileImmagineLogo","btnCaricaLogo","txtNotaA","txtPresenzaLogo","txtNotaNull"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["bIndietro"],
+	"widgetsOff":["cbTipoSoggetto","tfRagSociale","tfPIVA","cbSelezioneSO","tfCodFormReg","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","fileImmagineLogo","btnCaricaLogo","txtPresenzaLogo","txtNotaNull","txtNotaA","bSalva","menu"],
+	"widgetsShown":["tfRagSociale","tfPIVA","cbReg","cbProv","cbCom","tfIndirizzo","vVerifInd","cbSceltaInd","tfNumCivico","tfCap","tfTelefono","tfCell","tfEmail","tfEmailPEC","tfSitoWeb","bIndietro","bSalva","menu","cbTipoSoggetto","tfCodFormReg","cbSelezioneSO","fileImmagineLogo","btnCaricaLogo"],
+	"widgetsHidden":["txtPresenzaLogo","txtNotaNull","txtNotaA"]
+}
+],
+	"esiti":["OK_RW","OK_R","KO"],
+	"nomeMetodo":"loadFromDB",
+	"appDataToStore":[]
+}

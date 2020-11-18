@@ -1,0 +1,29 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["tfCodiceFiscale","bCercaCfCertificatori","cbListaCf","tfCognome","tfNome","cbTipoIstruzione","tfAlbo","tfProvAlbo","tfNumIscrAlbo","calDataIscrAlbo","calDataEsame","cbEsitoEsame","tfVotoEsame","tfTelefono","tfEmail","taNote","bIndietro","bSalva","menu","bStampaAttestato","lblSedeOperativa2","lblTitoloCorso2","tfLuogoNascita","calDataNascita","tfPercFreq","tfLuogoEsame","txtNotaA","txtNotaB"],
+	"widgetsOff":["tfNumCertificatore"],
+	"widgetsShown":["tfCodiceFiscale","bCercaCfCertificatori","cbListaCf","tfCognome","tfNome","cbTipoIstruzione","tfNumCertificatore","tfAlbo","tfProvAlbo","tfNumIscrAlbo","calDataIscrAlbo","calDataEsame","cbEsitoEsame","tfVotoEsame","tfTelefono","tfEmail","taNote","bIndietro","bSalva","menu","bStampaAttestato","lblSedeOperativa2","lblTitoloCorso2","tfLuogoNascita","calDataNascita","tfPercFreq","tfLuogoEsame","txtNotaA","txtNotaB"],
+	"widgetsHidden":[]
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["bIndietro","menu"],
+	"widgetsOff":["lblTitoloCorso2","lblSedeOperativa2","tfCodiceFiscale","bCercaCfCertificatori","cbListaCf","tfCognome","tfNome","tfLuogoNascita","calDataNascita","cbTipoIstruzione","tfNumCertificatore","tfAlbo","tfProvAlbo","tfNumIscrAlbo","calDataIscrAlbo","tfPercFreq","calDataEsame","tfVotoEsame","cbEsitoEsame","tfLuogoEsame","tfTelefono","tfEmail","taNote","bStampaAttestato","txtNotaA","txtNotaB","bSalva"],
+	"widgetsShown":["tfCodiceFiscale","bCercaCfCertificatori","cbListaCf","tfCognome","tfNome","cbTipoIstruzione","tfNumCertificatore","tfAlbo","tfProvAlbo","tfNumIscrAlbo","calDataIscrAlbo","calDataEsame","cbEsitoEsame","tfVotoEsame","tfTelefono","tfEmail","taNote","bIndietro","bSalva","menu","bStampaAttestato","tfLuogoNascita","calDataNascita","tfPercFreq","tfLuogoEsame","lblTitoloCorso2","lblSedeOperativa2","txtNotaA","txtNotaB"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK_RW","OK_R","KO"],
+	"nomeMetodo":"loadFromDB",
+	"appDataToStore":[]
+}
+] 
+}

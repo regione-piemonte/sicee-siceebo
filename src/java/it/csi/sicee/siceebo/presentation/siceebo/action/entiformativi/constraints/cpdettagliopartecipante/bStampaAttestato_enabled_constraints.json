@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDettaglioPartecipante",
+  "nomeWidget": "bStampaAttestato",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpDettaglioPartecipante",
+  "nomeWidget": "bStampaAttestato",
+  "fixedValue": true
+}
+
+  ]
+}

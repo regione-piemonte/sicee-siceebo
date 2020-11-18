@@ -1,0 +1,5 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpRisultatoCertificatoriAdv", 
+	"pushCurrent":false
+}

@@ -1,0 +1,29 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["tfTitolo","calDataDal","calDataAl","tfProtApprov","tfTotaleOre","bIndietro","bSalva","menu","tfNumCorso","tfAnnoFormativo","calDataApprov","cbTipoCorso1","tfLuogoCorso","taNote","lblSedeOperativa","txtNotaA"],
+	"widgetsOff":[],
+	"widgetsShown":["tfTitolo","calDataDal","calDataAl","tfProtApprov","tfTotaleOre","bIndietro","bSalva","menu","tfNumCorso","tfAnnoFormativo","calDataApprov","cbTipoCorso1","tfLuogoCorso","taNote","lblSedeOperativa","txtNotaA"],
+	"widgetsHidden":[]
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["bIndietro"],
+	"widgetsOff":["lblSedeOperativa","cbTipoCorso1","tfAnnoFormativo","tfNumCorso","tfTitolo","calDataDal","calDataAl","tfLuogoCorso","tfProtApprov","calDataApprov","tfTotaleOre","taNote","txtNotaA","bSalva","menu"],
+	"widgetsShown":["tfTitolo","calDataDal","calDataAl","tfProtApprov","tfTotaleOre","bIndietro","bSalva","menu","tfNumCorso","tfAnnoFormativo","calDataApprov","cbTipoCorso1","tfLuogoCorso","taNote","lblSedeOperativa","txtNotaA"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK_RW","OK_R","KO"],
+	"nomeMetodo":"loadFromDB",
+	"appDataToStore":[]
+}
+] 
+}

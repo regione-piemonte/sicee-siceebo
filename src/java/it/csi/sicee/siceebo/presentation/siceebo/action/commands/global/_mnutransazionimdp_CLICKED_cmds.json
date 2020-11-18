@@ -1,0 +1,8 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpTransazioniMdp", 
+	"pushCurrent":false
+}
+] 
+}

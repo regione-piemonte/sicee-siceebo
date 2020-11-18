@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<constant name="struts.ui.theme" value="csi" />
+	<constant name="struts.action.extension" value="do" />
+	
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercacertificatori/CpRicercaCertificatoriAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercacertificatori/CpRicercaCertificatoriAdvAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercacertificatori/CpRisultatoCertificatoriAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercacertificatori/CpRisultatoCertificatoriAdvAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercacertificatori/CpDettaglioCertificatoreAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/entiformativi/CpDatiRegistrazioneAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/entiformativi/CpCorsiAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/entiformativi/CpDettaglioCorsoAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/entiformativi/CpPartecipantiAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/entiformativi/CpDettaglioPartecipanteAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpRicercaAceAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpRisultatoAceAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpAnnullaAceAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpSostitutiAceAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpDettaglioAttestatoAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/stampaace/CpStampaAceAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/stampaace/CpRisultatoAceStampaAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/main/CpHomeAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/main/CpNonAbilitatoAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/main/CpEsciAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/main/CpDisabledAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpTransazioniMdpAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpVerificheIndexAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpVerificheActaAction
+	" />
+	<constant name="struts.multipart.parser" value="org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest" />
+	<!-- costanti per il fileUpload interceptor: settare solo se necessarie -->
+	<constant name="struts.multipart.maxSize" value="4524288" />
+	<!--<constant name="struts.multipart.saveDir" value="/tmp" />-->
+
+
+	<!-- jsp-package: TUTTI I PACKAGE DEVONO DERIVARE DA QUESTO -->
+	<package name="jsp-package" extends="struts-default">
+		<interceptors>
+			<interceptor name="tableSelection" class="it.csi.sicee.siceebo.presentation.siceebo.interceptor.TableSelectionInterceptor"/>
+			<interceptor name="methodProtection" class="it.csi.sicee.siceebo.presentation.siceebo.interceptor.MethodProtectionInterceptor">
+				<param name="excludeMethods">execute,localLogout,ssoLogout</param>
+			</interceptor>
+			<!-- l'esclusione dei parametri serve per evitare una XSS vulnerability -->
+			<interceptor name="paramsInterceptor" class="it.csi.sicee.siceebo.presentation.siceebo.interceptor.ParametersInterceptor">
+				<param name="excludeParams">actionMessages,actionErrors,fieldErrors</param>
+			</interceptor>
+
+			<interceptor-stack name="jsp-stack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="servletConfig" />
+			 	<interceptor-ref name="scopedModelDriven"/> 
+				<interceptor-ref name="modelDriven"/>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="tableSelection" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="fileUpload"/>
+				<!-- richiamare gli interceptor token e tokenSession dopo di questo -->
+				<interceptor-ref name="paramsInterceptor" />
+				<interceptor-ref name="conversionError"/>
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="validation" />
+				<interceptor-ref name="workflow" />
+				<interceptor-ref name="methodProtection" />
+			</interceptor-stack>
+			
+	
+		</interceptors>
+
+		<default-interceptor-ref name="jsp-stack"/>
+
+		<!-- gestione globale delle eccezioni e altri result globalmente validi -->
+		<global-results>
+		
+			<result name="BACK_TO_HOME" type="chain">
+			   <param name="actionName">HomePage</param>
+			    <param name="namespace">/secure</param>
+			</result>
+		
+			<result name="errorRuntime">/jsp/error/applicationError.jsp</result>
+			<!-- result per la restituizione di dati alle compoenenti rich U.I -->
+			<result name="provideData" type="stream">
+  				<param name="contentType">text/plain;charset=UTF-8</param>
+  				<param name="inputName">dataProviderStream</param>
+  				<param name="bufferSize">1024</param>
+  				<param name="allowCaching">false</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errorRuntime" exception="java.lang.RuntimeException"/>
+		</global-exception-mappings>
+
+	</package>
+
+
+	<!-- DEFAULT PACKAGE (ELEMENTI COMUNI A TUTTO L'APPLICATIVO) -->
+	<package name="default" extends="jsp-package" namespace="/base">
+		<action name="notFoundError">
+			<result>/jsp/error/notFound.jsp</result>
+		</action>
+		<action name="fatalError">
+			<result>/jsp/error/fatalError.jsp</result>
+		</action>
+		<action name="sessionExpired">
+			<result>/jsp/error/sessionExpired.jsp</result>
+		</action>
+		<action name="javascriptError">
+			<result>/jsp/error/javascriptError.jsp</result>
+		</action>
+	</package>
+
+
+	<!-- SECURE PACKAGE -->
+	<package name="secure" extends="jsp-package" namespace="/secure">
+		<!-- HOME PAGE -->
+		<action name="HomePage" class="it.csi.sicee.siceebo.presentation.siceebo.action.HomeAction">
+			<result name="GO_TO_cpHome" type="chain">
+			    <param name="actionName">cpHome</param>
+			    <param name="namespace">/base/main</param>
+			</result>
+			<result name="GO_TO_cpDisabled" type="chain">
+			    <param name="actionName">cpDisabled</param>
+			    <param name="namespace">/base/main</param>
+			</result>
+		</action>
+
+
+		<!-- LOGOUT (LOCAL/SSO) -->
+		<action name="Logout" class="it.csi.sicee.siceebo.presentation.siceebo.action.LogoutAction">
+			<result name="confirmLogout">/jsp/error/confirmLogout.jsp</result>
+			<result name="SSO_LOGOUT" type="redirect">
+				<param name="location">@LOGOUT_URL@</param>
+			</result>
+			<result name="LOCAL_LOGOUT" type="redirect">
+				<param name="location">@LOCAL_LOGOUT_URL@</param>
+			</result>
+		</action>
+
+		<!-- MENU -->
+		<action name="goToMnuhomeFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuhome">
+			<result name="GO_TO_cpHome" type="chain">
+				<param name="actionName">cpHome</param>
+				<param name="namespace">/base/main</param>
+			</result>
+		</action>
+
+		<action name="goToMnuRicCertificatoriFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuRicCertificatori">
+			<result name="GO_TO_cpRicercaCertificatori" type="chain">
+				<param name="actionName">cpRicercaCertificatori</param>
+				<param name="namespace">/base/ricercaCertificatori</param>
+			</result>
+		</action>
+
+		<action name="goToMnuRicCertificatoriAdvFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuRicCertificatoriAdv">
+			<result name="GO_TO_cpRicercaCertificatoriAdv" type="chain">
+				<param name="actionName">cpRicercaCertificatoriAdv</param>
+				<param name="namespace">/base/ricercaCertificatori</param>
+			</result>
+		</action>
+
+		<action name="goToMnuRicACEFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuRicACE">
+			<result name="GO_TO_cpRicercaAce" type="chain">
+				<param name="actionName">cpRicercaAce</param>
+				<param name="namespace">/base/ricercaAce</param>
+			</result>
+		</action>
+
+		<action name="goToMnuStampaAceFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuStampaAce">
+			<result name="GO_TO_cpStampaAce" type="chain">
+				<param name="actionName">cpStampaAce</param>
+				<param name="namespace">/base/stampaAce</param>
+			</result>
+		</action>
+
+
+		<action name="goToMnuDatiRegistrazioneFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuDatiRegistrazione">
+			<result name="GO_TO_cpDatiRegistrazione" type="chain">
+				<param name="actionName">cpDatiRegistrazione</param>
+				<param name="namespace">/base/entiFormativi</param>
+			</result>
+		</action>
+
+		<action name="goToMnuSchedaCorsiFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuSchedaCorsi">
+			<result name="GO_TO_cpCorsi" type="chain">
+				<param name="actionName">cpCorsi</param>
+				<param name="namespace">/base/entiFormativi</param>
+			</result>
+		</action>
+
+		<action name="goToMnuTransazioniMdpFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuTransazioniMdp">
+			<result name="GO_TO_cpTransazioniMdp" type="chain">
+				<param name="actionName">cpTransazioniMdp</param>
+				<param name="namespace">/base/backOffice</param>
+			</result>
+		</action>
+		<action name="goToMnuVerificaIndexFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuVerificaIndex">
+			<result name="GO_TO_cpVerificheIndex" type="chain">
+				<param name="actionName">cpVerificheIndex</param>
+				<param name="namespace">/base/backOffice</param>
+			</result>
+		</action>
+		<action name="goToMnuVerificaActaFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuVerificaActa">
+			<result name="GO_TO_cpVerificheActa" type="chain">
+				<param name="actionName">cpVerificheActa</param>
+				<param name="namespace">/base/backOffice</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

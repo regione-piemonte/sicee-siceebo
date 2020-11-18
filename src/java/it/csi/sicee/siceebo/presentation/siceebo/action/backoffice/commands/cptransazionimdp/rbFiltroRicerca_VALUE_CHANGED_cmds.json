@@ -1,0 +1,13 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["dettaglioTransAttEsito"]
+}
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"cercaTransazioni",
+	"appDataToStore":[]
+}

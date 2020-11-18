@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatoriAdv",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.RoleBasedUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuRicCertificatoriAdv",
+	"roleCode": "LETTORE_SICEEBO",
+	"domainCode": "REG_PMN"
+}
+
+
+  ]
+}

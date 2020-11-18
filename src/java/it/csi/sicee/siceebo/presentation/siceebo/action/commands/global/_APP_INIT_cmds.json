@@ -1,0 +1,39 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK"],
+	"nomeMetodo":"salvaLogAccesso",
+	"appDataToStore":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK"],
+	"nomeMetodo":"gestAnnullAttestatiScaduti",
+	"appDataToStore":[]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpHome", 
+	"pushCurrent":false
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpCommand" ,
+	"name": "cpDisabled", 
+	"pushCurrent":false
+}
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"checkEnabled",
+	"appDataToStore":["appDatacurrentUser"]
+}
+] 
+}

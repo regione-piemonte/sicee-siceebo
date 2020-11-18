@@ -1,0 +1,20 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRisApeCert",
+	"contentPanelName":"cpDettaglioCertificatore",
+	"itemName": "fpRisApeCert"}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpRisApeCert",
+	"contentPanelName":"cpDettaglioCertificatore",
+	"itemName": null}
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"ricercaAceCertByFiltro",
+	"appDataToStore":[]
+}

@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpOldApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpOldApe"}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"mpNewApe",
+	"contentPanelName":"cpRicercaAce",
+	"itemName": "fpNewApe"}
+],
+	"esiti":["OLD","NEW"],
+	"nomeMetodo":"gestisciApeOldAndNew",
+	"appDataToStore":[]
+}

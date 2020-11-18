@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": false,
+  "nomeContainer": "cpPartecipanti",
+  "nomeWidget": "tfNomeCorso",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": false,
+  "nomeContainer": "cpPartecipanti",
+  "nomeWidget": "tfNomeCorso",
+  "fixedValue": true
+}
+
+  ]
+}

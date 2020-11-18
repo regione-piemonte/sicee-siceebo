@@ -1,0 +1,28 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["tblElencoCorsi","btnEliminaCorso","btnDettaglioCorso","btnPartecipanti","bIndietro","bInserisciNuovo","menu","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso","cbSelezioneSO"],
+	"widgetsOff":[],
+	"widgetsShown":["tblElencoCorsi","btnEliminaCorso","btnDettaglioCorso","btnPartecipanti","bIndietro","bInserisciNuovo","menu","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso","cbSelezioneSO"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["btnDettaglioCorso","btnPartecipanti","bIndietro","menu","cbSelezioneSO"],
+	"widgetsOff":["tblElencoCorsi","btnEliminaCorso","bInserisciNuovo","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso"],
+	"widgetsShown":["tblElencoCorsi","btnEliminaCorso","btnDettaglioCorso","btnPartecipanti","bIndietro","bInserisciNuovo","menu","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso","cbSelezioneSO"],
+	"widgetsHidden":[]
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ScreenStateCommand" ,
+	"widgetsOn":["bIndietro"],
+	"widgetsOff":["cbSelezioneSO","tblElencoCorsi","btnEliminaCorso","btnDettaglioCorso","btnPartecipanti","bInserisciNuovo","menu","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso"],
+	"widgetsShown":["tblElencoCorsi","btnEliminaCorso","btnDettaglioCorso","btnPartecipanti","bIndietro","bInserisciNuovo","menu","txtMsgConfermaEliminaCorso","bIndietroCorsi","bEliminaCorso","cbSelezioneSO"],
+	"widgetsHidden":[]
+}
+],
+	"esiti":["OK_RW","OK_R","KO"],
+	"nomeMetodo":"loadCorsi",
+	"appDataToStore":[]
+}

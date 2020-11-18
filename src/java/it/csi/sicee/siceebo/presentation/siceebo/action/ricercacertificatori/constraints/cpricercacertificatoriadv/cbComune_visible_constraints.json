@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpRicercaCertificatoriAdv",
+  "nomeWidget": "cbComune",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpRicercaCertificatoriAdv",
+  "nomeWidget": "cbComune",
+  "fixedValue": true
+}
+
+  ]
+}

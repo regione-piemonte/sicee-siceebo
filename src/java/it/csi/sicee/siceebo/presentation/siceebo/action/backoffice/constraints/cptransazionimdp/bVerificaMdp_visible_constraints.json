@@ -1,0 +1,26 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpTransazioniMdp",
+  "nomeWidget": "bVerificaMdp",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.CustomUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpTransazioniMdp",
+  "nomeWidget": "bVerificaMdp",
+	"methodNameSuffix": "IsAbilVerificaMdp"
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DeclarativeUIConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "cpTransazioniMdp",
+  "nomeWidget": "bVerificaMdp",
+	"language": "beanshell",
+	"script": "model.appDatadettaglioTransAttEsito != null && model.appDatadettaglioTransAttEsito.size() > 0"
+}
+
+
+  ]
+}

@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ClearAppDataCommand" ,
+	"attributesToBeRemovedFromSession":["idVerificaSel","verificaIndex","ricercaAce"]
+}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.VisibilityCommand" ,
+	"show":false,
+	"targetsWidgets":["bRecupera","bVisualizza"],
+	"targetsMenuElement":[]
+}
+] 
+}
+],
+	"esiti":["OK"],
+	"nomeMetodo":"inizializzaVerificheIndex",
+	"appDataToStore":[]
+}

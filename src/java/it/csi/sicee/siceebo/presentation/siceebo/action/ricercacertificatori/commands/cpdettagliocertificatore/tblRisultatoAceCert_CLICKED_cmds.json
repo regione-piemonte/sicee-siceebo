@@ -1,0 +1,32 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"SCARICA_ATTESTATO",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/scaricaAttestato.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"SCARICA_RICEVUTA",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/scaricaRicevuta.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"SCARICA_TRACCIATO_XML",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"/base/scaricaTracciatoXml.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["ATTESTATO","RICEVUTA","TRACCIATO_XML","TRACCIATO_XML_ASSENTE","KO"],
+	"nomeMetodo":"preparaScaricoModulo",
+	"appDataToStore":[]
+}

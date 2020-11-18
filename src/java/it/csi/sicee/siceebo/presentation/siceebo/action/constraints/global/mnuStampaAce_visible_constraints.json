@@ -1,0 +1,19 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuStampaAce",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.RoleBasedUISecConstraint",
+  "constrainedBehavior": 2,
+  "defaultState": true,
+  "nomeContainer": "_menu",
+  "nomeWidget": "mnuStampaAce",
+	"roleCode": "GESTORE_SICEEBO",
+	"domainCode": "REG_PMN"
+}
+
+
+  ]
+}

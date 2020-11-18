@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="entiFormativi" extends="jsp-package" namespace="/base/entiFormativi">
+
+		
+<action name="cpDatiRegistrazione" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpDatiRegistrazioneAction">
+	<result name="input">/jsp/cpDatiRegistrazione.jsp</result>
+	<result name="success">/jsp/cpDatiRegistrazione.jsp</result>
+	
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/main</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpCorsi" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpCorsiAction">
+	<result name="input">/jsp/cpCorsi.jsp</result>
+	<result name="success">/jsp/cpCorsi.jsp</result>
+	
+	<result name="GO_TO_cpDettaglioCorso" type="chain">
+		<param name="actionName">cpDettaglioCorso</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_cpPartecipanti" type="chain">
+		<param name="actionName">cpPartecipanti</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_cpHome" type="chain">
+		<param name="actionName">cpHome</param>
+		<param name="namespace">/base/main</param>
+	</result>
+	<result name="GO_TO_cpCorsi" type="chain">
+		<param name="actionName">cpCorsi</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="SHOW_dlgConfermaEliminaCorso">/jsp/dialogpanels/cpCorsi_dlgConfermaEliminaCorso.jsp</result>
+</action>
+
+<action name="cpDettaglioCorso" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpDettaglioCorsoAction">
+	<result name="input">/jsp/cpDettaglioCorso.jsp</result>
+	<result name="success">/jsp/cpDettaglioCorso.jsp</result>
+	
+	<result name="GO_TO_cpCorsi" type="chain">
+		<param name="actionName">cpCorsi</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpPartecipanti" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpPartecipantiAction">
+	<result name="input">/jsp/cpPartecipanti.jsp</result>
+	<result name="success">/jsp/cpPartecipanti.jsp</result>
+	
+	<result name="GO_TO_cpDettaglioPartecipante" type="chain">
+		<param name="actionName">cpDettaglioPartecipante</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_cpCorsi" type="chain">
+		<param name="actionName">cpCorsi</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_cpPartecipanti" type="chain">
+		<param name="actionName">cpPartecipanti</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="SHOW_dlgConfermaEliminaPartecipante">/jsp/dialogpanels/cpPartecipanti_dlgConfermaEliminaPartecipante.jsp</result>
+</action>
+
+<action name="cpDettaglioPartecipante" class="it.csi.sicee.siceebo.presentation.siceebo.action.entiformativi.CpDettaglioPartecipanteAction">
+	<result name="input">/jsp/cpDettaglioPartecipante.jsp</result>
+	<result name="success">/jsp/cpDettaglioPartecipante.jsp</result>
+	
+	<result name="GO_TO_cpPartecipanti" type="chain">
+		<param name="actionName">cpPartecipanti</param>
+		<param name="namespace">/base/entiFormativi</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_STAMPA_ATTESTATO" type="redirect">
+		<param name="location">/base/cpStampaAttestato.do</param>
+	</result>
+</action>
+
+		<!--PROTECTED REGION ID(R728108271) ENABLED START-->
+		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
+		<!--PROTECTED REGION END-->
+
+	</package>
+</struts>
