@@ -41,6 +41,9 @@ public class BackEndFacade {
 	// ApplicationData: [idRigaSelezionata, scope:USER_SESSION]
 	public static final String APPDATA_IDRIGASELEZIONATA_CODE = "appDataidRigaSelezionata";
 
+	// ApplicationData: [mappaUrl, scope:USER_ACTION]
+	public static final String APPDATA_MAPPAURL_CODE = "appDatamappaUrl";
+
 	// ApplicationData: [regione, scope:USER_SESSION]
 	public static final String APPDATA_REGIONE_CODE = "appDataregione";
 
@@ -182,6 +185,21 @@ public class BackEndFacade {
 	// ApplicationData: [annullamentoApe, scope:USER_SESSION]
 	public static final String APPDATA_ANNULLAMENTOAPE_CODE = "appDataannullamentoApe";
 
+	// ApplicationData: [emailInvioApe, scope:USER_SESSION]
+	public static final String APPDATA_EMAILINVIOAPE_CODE = "appDataemailInvioApe";
+
+	// ApplicationData: [documentoAggiuntivo, scope:USER_SESSION]
+	public static final String APPDATA_DOCUMENTOAGGIUNTIVO_CODE = "appDatadocumentoAggiuntivo";
+
+	// ApplicationData: [idDocumentoSelezionato, scope:USER_SESSION]
+	public static final String APPDATA_IDDOCUMENTOSELEZIONATO_CODE = "appDataidDocumentoSelezionato";
+
+	// ApplicationData: [listDocumentazioneAggiuntiva, scope:USER_SESSION]
+	public static final String APPDATA_LISTDOCUMENTAZIONEAGGIUNTIVA_CODE = "appDatalistDocumentazioneAggiuntiva";
+
+	// ApplicationData: [uidDocumentoSelezionato, scope:USER_SESSION]
+	public static final String APPDATA_UIDDOCUMENTOSELEZIONATO_CODE = "appDatauidDocumentoSelezionato";
+
 	// ApplicationData: [resocontoTransMdp, scope:USER_SESSION]
 	public static final String APPDATA_RESOCONTOTRANSMDP_CODE = "appDataresocontoTransMdp";
 
@@ -202,6 +220,12 @@ public class BackEndFacade {
 
 	// ApplicationData: [verificaActa, scope:USER_SESSION]
 	public static final String APPDATA_VERIFICAACTA_CODE = "appDataverificaActa";
+
+	// ApplicationData: [riepilogoStoricizzazione, scope:USER_ACTION]
+	public static final String APPDATA_RIEPILOGOSTORICIZZAZIONE_CODE = "appDatariepilogoStoricizzazione";
+
+	// ApplicationData: [countCertificatiSenzaCoordinate, scope:USER_SESSION]
+	public static final String APPDATA_COUNTCERTIFICATISENZACOORDINATE_CODE = "appDatacountCertificatiSenzaCoordinate";
 
 	//////////////////////////////////////////////////////////////////////////////
 	/// Metodi associati alla U.I.
@@ -1204,6 +1228,36 @@ public class BackEndFacade {
 	////////////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * richiama il metodo preparaAperturaDocAggiuntiva utilizzato in un ExecCommand
+	 * del ContentPanel cpRisultatoAce
+	 */
+	public ExecResults preparaAperturaDocAggiuntiva(
+
+			it.csi.sicee.siceebo.dto.ricercaace.CpRisultatoAceModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpRisultatoAce
+		return getCPBECpRisultatoAce().preparaAperturaDocAggiuntiva(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo invaEmailZipXmlApe utilizzato in un ExecCommand
+	 * del ContentPanel cpRisultatoAce
+	 */
+	public ExecResults invaEmailZipXmlApe(
+
+			it.csi.sicee.siceebo.dto.ricercaace.CpRisultatoAceModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpRisultatoAce
+		return getCPBECpRisultatoAce().invaEmailZipXmlApe(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
 	 * richiama il metodo initListaAttestati utilizzato in un ExecCommand
 	 * del ContentPanel cpRisultatoAce
 	 */
@@ -1289,6 +1343,36 @@ public class BackEndFacade {
 	) throws BEException {
 		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpDettaglioAttestato
 		return getCPBECpDettaglioAttestato().visualizzaDettaglioAttestato(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo preparaDownloadDocumento utilizzato in un ExecCommand
+	 * del ContentPanel cpDocAggiuntiva
+	 */
+	public ExecResults preparaDownloadDocumento(
+
+			it.csi.sicee.siceebo.dto.ricercaace.CpDocAggiuntivaModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpDocAggiuntiva
+		return getCPBECpDocAggiuntiva().preparaDownloadDocumento(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo initListaDocumentazione utilizzato in un ExecCommand
+	 * del ContentPanel cpDocAggiuntiva
+	 */
+	public ExecResults initListaDocumentazione(
+
+			it.csi.sicee.siceebo.dto.ricercaace.CpDocAggiuntivaModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpDocAggiuntiva
+		return getCPBECpDocAggiuntiva().initListaDocumentazione(theModel);
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////
@@ -1484,6 +1568,66 @@ public class BackEndFacade {
 	) throws BEException {
 		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpVerificheActa
 		return getCPBECpVerificheActa().inizializzaVerificheActa(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo gestStoricizzaLogAccesso utilizzato in un ExecCommand
+	 * del ContentPanel cpStoricizzazioneLogAccesso
+	 */
+	public ExecResults gestStoricizzaLogAccesso(
+
+			it.csi.sicee.siceebo.dto.backoffice.CpStoricizzazioneLogAccessoModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpStoricizzazioneLogAccesso
+		return getCPBECpStoricizzazioneLogAccesso().gestStoricizzaLogAccesso(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo inizializzaCountRecordStoricizzazione utilizzato in un ExecCommand
+	 * del ContentPanel cpStoricizzazioneLogAccesso
+	 */
+	public ExecResults inizializzaCountRecordStoricizzazione(
+
+			it.csi.sicee.siceebo.dto.backoffice.CpStoricizzazioneLogAccessoModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpStoricizzazioneLogAccesso
+		return getCPBECpStoricizzazioneLogAccesso().inizializzaCountRecordStoricizzazione(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo gestRecuperoCoordinateLOCCSI utilizzato in un ExecCommand
+	 * del ContentPanel cpRecuperaCoordinateLOCCSI
+	 */
+	public ExecResults gestRecuperoCoordinateLOCCSI(
+
+			it.csi.sicee.siceebo.dto.backoffice.CpRecuperaCoordinateLOCCSIModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpRecuperaCoordinateLOCCSI
+		return getCPBECpRecuperaCoordinateLOCCSI().gestRecuperoCoordinateLOCCSI(theModel);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * richiama il metodo inizializzaCountCertificatiSenzaCoordinate utilizzato in un ExecCommand
+	 * del ContentPanel cpRecuperaCoordinateLOCCSI
+	 */
+	public ExecResults inizializzaCountCertificatiSenzaCoordinate(
+
+			it.csi.sicee.siceebo.dto.backoffice.CpRecuperaCoordinateLOCCSIModel theModel
+
+	) throws BEException {
+		// l'esecuzione viene delegata al bean corrispondente al ContentPanel cpRecuperaCoordinateLOCCSI
+		return getCPBECpRecuperaCoordinateLOCCSI().inizializzaCountCertificatiSenzaCoordinate(theModel);
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////
@@ -2063,6 +2207,25 @@ public class BackEndFacade {
 	}
 
 	/**
+	 * riferimento al CPBE del content panel cpDocAggiuntiva
+	 */
+	private it.csi.sicee.siceebo.business.ricercaace.CPBECpDocAggiuntiva cPBECpDocAggiuntiva = null;
+
+	/**
+	 * riferimento al CPBE del content panel cpDocAggiuntiva
+	 */
+	public void setCPBECpDocAggiuntiva(it.csi.sicee.siceebo.business.ricercaace.CPBECpDocAggiuntiva bean) {
+		this.cPBECpDocAggiuntiva = bean;
+	}
+
+	/**
+	 * riferimento al CPBE del content panel cpDocAggiuntiva
+	 */
+	public it.csi.sicee.siceebo.business.ricercaace.CPBECpDocAggiuntiva getCPBECpDocAggiuntiva() {
+		return this.cPBECpDocAggiuntiva;
+	}
+
+	/**
 	 * riferimento al CPBE del content panel cpStampaAce
 	 */
 	private it.csi.sicee.siceebo.business.stampaace.CPBECpStampaAce cPBECpStampaAce = null;
@@ -2231,6 +2394,46 @@ public class BackEndFacade {
 	 */
 	public it.csi.sicee.siceebo.business.backoffice.CPBECpVerificheActa getCPBECpVerificheActa() {
 		return this.cPBECpVerificheActa;
+	}
+
+	/**
+	 * riferimento al CPBE del content panel cpStoricizzazioneLogAccesso
+	 */
+	private it.csi.sicee.siceebo.business.backoffice.CPBECpStoricizzazioneLogAccesso cPBECpStoricizzazioneLogAccesso = null;
+
+	/**
+	 * riferimento al CPBE del content panel cpStoricizzazioneLogAccesso
+	 */
+	public void setCPBECpStoricizzazioneLogAccesso(
+			it.csi.sicee.siceebo.business.backoffice.CPBECpStoricizzazioneLogAccesso bean) {
+		this.cPBECpStoricizzazioneLogAccesso = bean;
+	}
+
+	/**
+	 * riferimento al CPBE del content panel cpStoricizzazioneLogAccesso
+	 */
+	public it.csi.sicee.siceebo.business.backoffice.CPBECpStoricizzazioneLogAccesso getCPBECpStoricizzazioneLogAccesso() {
+		return this.cPBECpStoricizzazioneLogAccesso;
+	}
+
+	/**
+	 * riferimento al CPBE del content panel cpRecuperaCoordinateLOCCSI
+	 */
+	private it.csi.sicee.siceebo.business.backoffice.CPBECpRecuperaCoordinateLOCCSI cPBECpRecuperaCoordinateLOCCSI = null;
+
+	/**
+	 * riferimento al CPBE del content panel cpRecuperaCoordinateLOCCSI
+	 */
+	public void setCPBECpRecuperaCoordinateLOCCSI(
+			it.csi.sicee.siceebo.business.backoffice.CPBECpRecuperaCoordinateLOCCSI bean) {
+		this.cPBECpRecuperaCoordinateLOCCSI = bean;
+	}
+
+	/**
+	 * riferimento al CPBE del content panel cpRecuperaCoordinateLOCCSI
+	 */
+	public it.csi.sicee.siceebo.business.backoffice.CPBECpRecuperaCoordinateLOCCSI getCPBECpRecuperaCoordinateLOCCSI() {
+		return this.cPBECpRecuperaCoordinateLOCCSI;
 	}
 
 	//////////////////////////////////////////////////////////////////////////////

@@ -206,6 +206,29 @@ public class CpRicercaAceModel extends BaseSessionAwareDTO {
 		return (java.lang.String) (getSession().get("appDatamotivazioneCtu"));
 	}
 
+	/**
+	 * @generated
+	 */
+	private java.lang.String appDatamappaUrl = null;
+
+	/**
+	 * imposta il valore dell' ApplicationData 'appDatamappaUrl'
+	 * @param value
+	 * @generated
+	 */
+
+	public void setAppDatamappaUrl(java.lang.String value) {
+		appDatamappaUrl = value;
+	}
+
+	/**
+	 * legge il valore dell' ApplicationData 'appDatamappaUrl'
+	 * @generated
+	 */
+	public java.lang.String getAppDatamappaUrl() {
+		return appDatamappaUrl;
+	}
+
 	////////////////////////////////////////////////////////////////////
 	/// campi per widget semplici
 	////////////////////////////////////////////////////////////////////

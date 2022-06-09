@@ -1,0 +1,22 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.SequenceCommand" ,
+	"actions": [{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ActivateMultiPanelItemCommand" ,
+	"containerName":"emailMultipanel",
+	"contentPanelName":"cpRisultatoAce",
+	"itemName": null}
+,{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.OnOffCommand" ,
+	"enable":true,
+	"targetsWidgets":["bNuovaRicerca","bAffinaRicerca","btnSostituzioni","scarica","bStampaReport","btnAnnulla","bScaricaXml"],
+	"targetsMenuElement":[]
+}
+] 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"invaEmailZipXmlApe",
+	"appDataToStore":[]
+}

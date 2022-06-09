@@ -7,6 +7,11 @@
  */
 package it.csi.sicee.siceebo.business.facade;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import it.csi.csi.porte.InfoPortaDelegata;
 import it.csi.csi.porte.proxy.PDProxy;
 import it.csi.csi.util.xml.PDConfigReader;
@@ -17,28 +22,20 @@ import it.csi.sicee.siceebo.business.BEException;
 import it.csi.sicee.siceebo.dto.LabelValue;
 import it.csi.sicee.siceebo.dto.ace.Ace;
 import it.csi.sicee.siceebo.dto.geo.Comune;
+import it.csi.sicee.siceebo.dto.geo.Indirizzo;
 import it.csi.sicee.siceebo.dto.geo.Provincia;
 import it.csi.sicee.siceebo.dto.geo.Regione;
-import it.csi.sicee.siceebo.dto.geo.Indirizzo;
 import it.csi.sicee.siceebo.util.Constants;
 import it.csi.sicee.siceebo.util.Converter;
-import it.csi.sicee.siceebo.util.GenericUtil;
+import it.csi.sicee.siceeorch.dto.siceeorch.CoordinateLOCCSI;
 import it.csi.sicee.siceeorch.dto.siceeorch.Documento;
 import it.csi.sicee.siceeorch.dto.siceeorch.Via;
 import it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException;
 import it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException;
 import it.csi.sicee.siceeorch.exception.siceeorch.ToponomasticaException;
 import it.csi.sicee.siceeorch.interfacecsi.siceeorch.SiceeorchSrv;
-import it.csi.sicee.siceews.stubs.Allegato;
 import it.csi.sicee.siceews.stubs.SiceewsMgrLocator;
 import it.csi.sicee.siceews.stubs.SiceewsMgrSoapBindingStub;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.xml.rpc.ServiceException;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -678,6 +675,8 @@ public class SOAIntegrationMgr extends BaseMgr{
 		Ace ret = new Ace();
 		ret.setCodice(ace.getAnno() + " " + ace.getCertificatore() + " " + ace.getNumero());
 		ret.setDescStato(ace.getDescStato());
+		ret.setMotivoSostituzione(ace.getMotivoSostituzione());
+		ret.setDtSostituzione(ace.getDtSostituzione());
 		return ret;
 	}
 	
@@ -1019,6 +1018,23 @@ public class SOAIntegrationMgr extends BaseMgr{
 			throw new BEException("Errore in insertLogAccesso:" + e, e);
 		} catch (CSIException e) {
 			throw new BEException("Errore in insertLogAccesso:" + e, e);
+		}
+
+	}
+	
+	public CoordinateLOCCSI getCoordinateLOCCSI(String comune, String indirizzo, String civico) throws BEException {
+		try {
+			return srv.getCoordinateLOCCSI(comune, indirizzo, civico);
+		} catch (CSIException e) {
+			log.error("Impossibile recuperare coordinate LOCCSI:" + e);
+			CoordinateLOCCSI coordinateLOCCSI = new CoordinateLOCCSI();
+			coordinateLOCCSI.setCoordX(0.0);
+			coordinateLOCCSI.setCoordY(0.0);
+			
+			return coordinateLOCCSI;
+		} catch (Exception e) {
+			log.error("Errore in getCoordinateLOCCSI:" + e);
+			throw new BEException("Errore in getCoordinateLOCCSI:" + e, e);
 		}
 
 	}

@@ -238,6 +238,20 @@
  >
 			
 		</display:column>
+		<display:column property="dtSostituzione" titleKey="cpSostitutiAce.tblElencoSostituzioniAce.dtSostituzione.label" 
+			sortable="true" headerClass="sortable"
+			    media="html"
+			
+ >
+			
+		</display:column>
+		<display:column property="motivoSostituzione" titleKey="cpSostitutiAce.tblElencoSostituzioniAce.motivoSostituzione.label" 
+			sortable="true" headerClass="sortable"
+			    media="html"
+			
+ >
+			
+		</display:column>
 </display:table>
 
 

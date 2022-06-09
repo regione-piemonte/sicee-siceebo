@@ -1,0 +1,16 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.ExecCommand" ,
+	"azioni":[
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.JumpExtCommand" ,
+	"locationCode":"DOWNLOAD_DOC",
+	"runtimeUrlProviderAppData":"",
+	"staticUrl":"downloadDoc.do",
+	"binaryStream":false 
+}
+,
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.action.NOPCommand" }
+],
+	"esiti":["OK","KO"],
+	"nomeMetodo":"preparaDownloadDocumento",
+	"appDataToStore":[]
+}

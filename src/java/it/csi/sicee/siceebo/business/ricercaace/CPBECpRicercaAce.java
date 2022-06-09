@@ -17,6 +17,7 @@ import it.csi.sicee.siceebo.business.*;
 import it.csi.sicee.siceebo.business.facade.AceMgr;
 import it.csi.sicee.siceebo.business.facade.BaseMgr;
 import it.csi.sicee.siceebo.business.facade.SOAIntegrationMgr;
+import it.csi.sicee.siceebo.business.dao.dto.SiceeTParametri;
 import it.csi.sicee.siceebo.dto.ExecResults;
 import it.csi.sicee.siceebo.dto.UserInfo;
 import it.csi.sicee.siceebo.dto.ace.Ace;
@@ -70,6 +71,9 @@ public class CPBECpRicercaAce {
 
 	// ApplicationData: [motivazioneCtu, scope:USER_SESSION]
 	public static final String APPDATA_MOTIVAZIONECTU_CODE = "appDatamotivazioneCtu";
+
+	// ApplicationData: [mappaUrl, scope:USER_ACTION]
+	public static final String APPDATA_MAPPAURL_CODE = "appDatamappaUrl";
 
 	//////////////////////////////////////////////////////////////////////////////
 	/// Metodi associati alla U.I.
@@ -636,8 +640,14 @@ public class CPBECpRicercaAce {
 			/*PROTECTED REGION ID(R-176974106) ENABLED START*/
 			// inserire qui la logica applicativa da eseguire:
 
-			log.debug("PASSO 1 - gestisciComboInit");
+			log.info("Prima di recuperare url Maps");
+			SiceeTParametri param = aceMgr.getSiceeTParametriDao().findByPrimaryKey(Constants.LINK_MAPPA_WMS);
 
+			if (param != null) {
+				theModel.setAppDatamappaUrl(param.getValore());
+			}
+
+			log.debug("PASSO 1 - gestisciComboInit");
 			gestisciComboDtCatasto(theModel);
 			log.debug("PASSO 2 - gestisciComboInit");
 

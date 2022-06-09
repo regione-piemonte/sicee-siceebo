@@ -116,7 +116,7 @@
 
     <echo message="===> Target: ${target}" />
     
-    <ant antfile="buildfiles/xmlbean-generate.xml" />
+    <!--ant antfile="buildfiles/xmlbean-generate.xml" /-->
     
     <javac srcdir="${src}/java" destdir="${build}/classes"
            optimize="on" deprecation="on" compiler="modern"
@@ -287,8 +287,8 @@
     <!-- gestire qui i  replace delle proprie variabili d'ambiente -->
 	<!--replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/defpd_siceeorch.xml" token="@sicee.siceeorch.siceeorch.pa.url@" value="${sicee.siceeorch.siceeorch.pa.url}" /-->
 
-  	<replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/defpd_modolsrv.xml" token="@url.t3@" value="${modol.pa.url}" />
-  	<replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/defpd_modolpdfgeneratorsrv.xml" token="@url.t3@" value="${modol.pdf.pa.url}" />
+  	<!--replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/defpd_modolsrv.xml" token="@url.t3@" value="${modol.pa.url}" />
+  	<replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/defpd_modolpdfgeneratorsrv.xml" token="@url.t3@" value="${modol.pdf.pa.url}" /-->
   	
   	<replace file="${build}/temp/conf/ejb/business/siceebo/META-INF/siceebo.properties" token="@siceews.url@" value="${siceews.url}" />
   	  	

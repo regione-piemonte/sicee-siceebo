@@ -50,6 +50,9 @@
 		<property name="CPBECpDettaglioAttestato">
 			<ref bean="CPBECpDettaglioAttestato"/>
 		</property>
+		<property name="CPBECpDocAggiuntiva">
+			<ref bean="CPBECpDocAggiuntiva"/>
+		</property>
 		<property name="CPBECpStampaAce">
 			<ref bean="CPBECpStampaAce"/>
 		</property>
@@ -76,6 +79,12 @@
 		</property>
 		<property name="CPBECpVerificheActa">
 			<ref bean="CPBECpVerificheActa"/>
+		</property>
+		<property name="CPBECpStoricizzazioneLogAccesso">
+			<ref bean="CPBECpStoricizzazioneLogAccesso"/>
+		</property>
+		<property name="CPBECpRecuperaCoordinateLOCCSI">
+			<ref bean="CPBECpRecuperaCoordinateLOCCSI"/>
 		</property>
 	</bean>
 	
@@ -110,6 +119,8 @@
 	</bean>
 	<bean id="CPBECpDettaglioAttestato" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpDettaglioAttestato">
 	</bean>
+	<bean id="CPBECpDocAggiuntiva" class="it.csi.sicee.siceebo.business.ricercaace.CPBECpDocAggiuntiva">
+	</bean>
 	<bean id="CPBECpStampaAce" class="it.csi.sicee.siceebo.business.stampaace.CPBECpStampaAce">
 	</bean>
 	<bean id="CPBECpRisultatoAceStampa" class="it.csi.sicee.siceebo.business.stampaace.CPBECpRisultatoAceStampa">
@@ -127,6 +138,10 @@
 	<bean id="CPBECpVerificheIndex" class="it.csi.sicee.siceebo.business.backoffice.CPBECpVerificheIndex">
 	</bean>
 	<bean id="CPBECpVerificheActa" class="it.csi.sicee.siceebo.business.backoffice.CPBECpVerificheActa">
+	</bean>
+	<bean id="CPBECpStoricizzazioneLogAccesso" class="it.csi.sicee.siceebo.business.backoffice.CPBECpStoricizzazioneLogAccesso">
+	</bean>
+	<bean id="CPBECpRecuperaCoordinateLOCCSI" class="it.csi.sicee.siceebo.business.backoffice.CPBECpRecuperaCoordinateLOCCSI">
 	</bean>
 	
 	
@@ -236,6 +251,9 @@
 
 	<bean id="certificatoMgr" class="it.csi.sicee.siceebo.business.facade.CertificatoMgr">
 		</bean>	
+		
+	<bean id="connectorMgr" class="it.csi.sicee.siceebo.business.facade.ConnectorMgr">
+		</bean>
 
 	<!--PROTECTED REGION END-->
 

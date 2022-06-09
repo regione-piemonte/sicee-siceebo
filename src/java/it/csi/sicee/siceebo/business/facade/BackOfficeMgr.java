@@ -11,6 +11,8 @@ package it.csi.sicee.siceebo.business.facade;
 import it.csi.sicee.siceebo.business.BEException;
 import it.csi.sicee.siceebo.business.dao.dao.OptimizedSiceeTTransazione2018Dao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeDTipoDocIndex2015Dao;
+import it.csi.sicee.siceebo.business.dao.dao.SiceeLAccessoDao;
+import it.csi.sicee.siceebo.business.dao.dao.SiceeSAccessoDao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeTActaDao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeTCertificatoDao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeTCertificatoreDao;
@@ -20,19 +22,19 @@ import it.csi.sicee.siceebo.business.dao.dao.SiceeTRifIndex2015Dao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeTTransazione2018Dao;
 import it.csi.sicee.siceebo.business.dao.dto.OptimizedSiceeTTransazione2018;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeDTipoDocIndex2015;
+import it.csi.sicee.siceebo.business.dao.dto.SiceeLAccesso;
+import it.csi.sicee.siceebo.business.dao.dto.SiceeLAccessoPk;
+import it.csi.sicee.siceebo.business.dao.dto.SiceeSAccesso;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTActa;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificato;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificatore;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTExportBo;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTExportBoPk;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTFoto2015;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTParametriActa;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTRifIndex2015;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTSiape;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTTransazione2018Pk;
 import it.csi.sicee.siceebo.business.dao.exceptions.OptimizedSiceeTTransazione2018DaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeDTipoDocIndex2015DaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTActaDaoException;
+import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTCertificatoDaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTCertificatoreDaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTFoto2015DaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTParametriActaDaoException;
@@ -42,24 +44,21 @@ import it.csi.sicee.siceebo.dto.ace.FiltroRicercaAce;
 import it.csi.sicee.siceebo.dto.backoffice.DettaglioTransAttEsito;
 import it.csi.sicee.siceebo.dto.backoffice.FiltroDettaglioTransAttEsito;
 import it.csi.sicee.siceebo.dto.backoffice.ResocontoTransMdp;
+import it.csi.sicee.siceebo.dto.backoffice.RiepilogoStoricizzazione;
 import it.csi.sicee.siceebo.dto.backoffice.VerificaActa;
 import it.csi.sicee.siceebo.dto.backoffice.VerificaIndex;
 import it.csi.sicee.siceebo.util.Constants;
-import it.csi.sicee.siceebo.util.Converter;
 import it.csi.sicee.siceebo.util.GenericUtil;
+import it.csi.sicee.siceebo.util.Messages;
+import it.csi.sicee.siceeorch.dto.siceeorch.CoordinateLOCCSI;
 import it.csi.sicee.siceeorch.dto.siceeorch.Documento;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.beanutils.ConvertUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
-
-import com.lowagie.text.BadElementException;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -207,7 +206,26 @@ public class BackOfficeMgr extends BaseMgr {
 	public void setSiceeTParametriActaDao(SiceeTParametriActaDao siceeTParametriActaDao) {
 		this.siceeTParametriActaDao = siceeTParametriActaDao;
 	}
+	
+	private SiceeLAccessoDao siceeLAccessoDao;
 
+	public SiceeLAccessoDao getSiceeLAccessoDao() {
+		return this.siceeLAccessoDao;
+	}
+
+	public void setSiceeLAccessoDao(SiceeLAccessoDao siceeLAccessoDao) {
+		this.siceeLAccessoDao = siceeLAccessoDao;
+	}
+	
+	private SiceeSAccessoDao siceeSAccessoDao;
+
+	public SiceeSAccessoDao getSiceeSAccessoDao() {
+		return this.siceeSAccessoDao;
+	}
+
+	public void setSiceeSAccessoDao(SiceeSAccessoDao siceeSAccessoDao) {
+		this.siceeSAccessoDao = siceeSAccessoDao;
+	}
 
 	public ResocontoTransMdp findResocontoTransazioniMdp()
 			throws BEException {
@@ -658,6 +676,101 @@ public class BackOfficeMgr extends BaseMgr {
 		catch (SiceeTActaDaoException e) {
 			throw new BEException("Erorre nella lettura della SiceeTActaDaoException", e);
 		} 
+		
+	}
+	
+	public RiepilogoStoricizzazione getRiepilogoStoricizzazione()  throws BEException {
+		try {
+
+			Integer countStor = getSiceeLAccessoDao().findLogAccessoDaStoricizzareCount();
+			Integer countCanc = getSiceeSAccessoDao().findLogAccessoDaCancellareCount();
+
+			RiepilogoStoricizzazione riepilogo = new RiepilogoStoricizzazione();
+			
+			riepilogo.setLogAccessoStor(countStor);
+			riepilogo.setLogAccessoCanc(countCanc);
+			
+			return riepilogo;
+			
+		} catch (Exception e) {
+			throw new BEException(Messages.ERROR_RECUPERO_DB, e);
+		}
+	}
+	
+	public void eliminaLogAccessoOld() throws BEException {
+		try {
+
+			getSiceeSAccessoDao().deleteOld();
+			
+		} catch (Exception e) {
+			log.error(e.getCause(), e);
+			throw new BEException(Messages.ERROR_RECUPERO_DB, e);
+		}
+	}
+	
+	public List<SiceeLAccesso> recuperaLogAccessoDaArchiviare() throws BEException {
+		try {
+
+			List<SiceeLAccesso> daArchiviareList = getSiceeLAccessoDao().findDaArchiviare(); 
+			
+			return daArchiviareList;
+			
+		} catch (Exception e) {
+			log.error(e.getCause(), e);
+			throw new BEException(Messages.ERROR_RECUPERO_DB, e);
+		}
+	}
+	
+	@Transactional
+	public void archiviaLogAccessoStorico(SiceeLAccesso logAccesso) throws BEException {
+		try {
+
+			SiceeSAccesso logAccessoStorico = new SiceeSAccesso();
+			
+			PropertyUtils.copyProperties(logAccessoStorico, logAccesso);
+			
+			getSiceeSAccessoDao().insert(logAccessoStorico);
+			
+			SiceeLAccessoPk siceeLAccessoPk = new SiceeLAccessoPk(logAccesso.getDtAccesso(), logAccesso.getCodiceFiscale());
+			
+			getSiceeLAccessoDao().delete(siceeLAccessoPk);
+			
+		} catch (Exception e) {
+			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+			log.error(e.getCause(), e);
+			throw new BEException(Messages.ERROR_UPDATE_DB, e);
+		}
+		
+	}
+	
+	public Integer getCountCertificatiSenzaCoordinate() throws BEException {
+		try {
+
+			return getSiceeTCertificatoDao().countCertificatiSenzaCoordinate();
+			
+		} catch (Exception e) {
+			throw new BEException(Messages.ERROR_RECUPERO_DB, e);
+		}
+	}
+	
+	public void aggiornaCoordinateCertificati() throws BEException {
+		try {
+
+			List<SiceeTCertificato> certificatiSenzaCoordinate = getSiceeTCertificatoDao().findCertificatiSenzaCoordinate();
+			
+			for (SiceeTCertificato certificato: certificatiSenzaCoordinate) {
+				
+				CoordinateLOCCSI coordinate = getSoaIntegrationMgr().getCoordinateLOCCSI(certificato.getDescComune(), certificato.getDescIndirizzo(), certificato.getNumCivico());
+				
+				certificato.setCoordXLongDd(coordinate.getCoordX());
+				certificato.setCoordYLatDd(coordinate.getCoordY());
+				
+				getSiceeTCertificatoDao().update(certificato.createPk(), certificato);
+			}
+			
+		} catch (SiceeTCertificatoDaoException e) {
+			throw new BEException(Messages.ERROR_RECUPERO_DB, e);
+		}
 		
 	}
 }

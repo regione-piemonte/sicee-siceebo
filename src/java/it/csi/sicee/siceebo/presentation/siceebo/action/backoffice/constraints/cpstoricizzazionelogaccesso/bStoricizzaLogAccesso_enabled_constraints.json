@@ -1,0 +1,17 @@
+
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.ComplexUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpStoricizzazioneLogAccesso",
+  "nomeWidget": "bStoricizzaLogAccesso",
+  "constraints": [
+{ "class": "it.csi.sicee.siceebo.presentation.siceebo.security.DummyUISecConstraint",
+  "constrainedBehavior": 1,
+  "defaultState": true,
+  "nomeContainer": "cpStoricizzazioneLogAccesso",
+  "nomeWidget": "bStoricizzaLogAccesso",
+  "fixedValue": true
+}
+
+  ]
+}

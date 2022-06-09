@@ -42,6 +42,28 @@
 	
 </action>
 
+<action name="cpStoricizzazioneLogAccesso" class="it.csi.sicee.siceebo.presentation.siceebo.action.backoffice.CpStoricizzazioneLogAccessoAction">
+	<result name="input">/jsp/cpStoricizzazioneLogAccesso.jsp</result>
+	<result name="success">/jsp/cpStoricizzazioneLogAccesso.jsp</result>
+	
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
+<action name="cpRecuperaCoordinateLOCCSI" class="it.csi.sicee.siceebo.presentation.siceebo.action.backoffice.CpRecuperaCoordinateLOCCSIAction">
+	<result name="input">/jsp/cpRecuperaCoordinateLOCCSI.jsp</result>
+	<result name="success">/jsp/cpRecuperaCoordinateLOCCSI.jsp</result>
+	
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+</action>
+
 		<!--PROTECTED REGION ID(R-583075619) ENABLED START-->
 		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
 		

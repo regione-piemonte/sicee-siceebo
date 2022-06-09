@@ -41,6 +41,10 @@
 		<param name="actionName">cpAnnullaAce</param>
 		<param name="namespace">/base/ricercaAce</param>
 	</result>
+	<result name="GO_TO_cpDocAggiuntiva" type="chain">
+		<param name="actionName">cpDocAggiuntiva</param>
+		<param name="namespace">/base/ricercaAce</param>
+	</result>
 	<result name="GO_TO_BackPage" type="chain">
 		<param name="actionName">${backActionName}</param>
 		<param name="namespace">${backNamespace}</param>
@@ -113,7 +117,34 @@
 	
 </action>
 
+<action name="cpDocAggiuntiva" class="it.csi.sicee.siceebo.presentation.siceebo.action.ricercaace.CpDocAggiuntivaAction">
+	<result name="input">/jsp/cpDocAggiuntiva.jsp</result>
+	<result name="success">/jsp/cpDocAggiuntiva.jsp</result>
+	
+	<result name="GO_TO_cpRisultatoAce" type="chain">
+		<param name="actionName">cpRisultatoAce</param>
+		<param name="namespace">/base/ricercaAce</param>
+	</result>
+	<result name="GO_TO_BackPage" type="chain">
+		<param name="actionName">${backActionName}</param>
+		<param name="namespace">${backNamespace}</param>
+	</result>
+	
+	<result name="GO_TO_EX_DOWNLOAD_DOC" type="redirect">
+		<param name="location">downloadDoc.do</param>
+	</result>
+</action>
+
 		<!--PROTECTED REGION ID(R326135686) ENABLED START-->
+		<action name="downloadDoc" class="it.csi.sicee.siceebo.presentation.siceebo.action.pdf.DownloadDocaggiuntivaAction">
+			<result name="downloadFile" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">1024</param>
+				<param name="contentDisposition">${contentDisposition}</param>
+			</result>
+			<result name="KO" type="chain">cpDocAggiuntiva</result>
+		</action>
 		<!-- inserire qui la dichiarazione di azioni aggiuntive hand-written -->
 		<!--PROTECTED REGION END-->
 

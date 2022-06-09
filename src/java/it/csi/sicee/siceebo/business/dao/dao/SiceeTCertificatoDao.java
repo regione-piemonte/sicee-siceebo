@@ -7,6 +7,7 @@ package it.csi.sicee.siceebo.business.dao.dao;
 import it.csi.sicee.siceebo.business.dao.dao.SiceeTCertificatoDao;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificato;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificatoPk;
+import it.csi.sicee.siceebo.business.dao.exceptions.SiceeLAccessoDaoException;
 import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTCertificatoDaoException;
 
 import java.util.Date;
@@ -601,5 +602,10 @@ from SICEE_T_VERIFY_REPORT)'.
 	 * @throws SiceeTCertificatoDaoException the sicee t certificato dao exception
 	 */
 	public SiceeTCertificato findByPrimaryKey(SiceeTCertificatoPk pk) throws SiceeTCertificatoDaoException;
+	
+	public Integer countCertificatiSenzaCoordinate() throws SiceeTCertificatoDaoException;
+	
+	public List<SiceeTCertificato> findCertificatiSenzaCoordinate() throws SiceeTCertificatoDaoException;
+
 
 }

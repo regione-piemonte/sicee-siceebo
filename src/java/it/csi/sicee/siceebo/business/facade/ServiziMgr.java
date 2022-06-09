@@ -29,7 +29,7 @@ import it.csi.sicee.siceebo.util.XmlBeanUtils;
 import it.csi.sicee.siceebo.business.dao.dto.SiceeTImportDati2015;
 import it.csi.sicee.siceebo.business.facade.BaseMgr;
 import it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException;
-import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
+//import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
 import it.csi.sicee.siceebo.util.MapDto;
 import it.csi.sicee.siceebo.business.facade.CertificatoMgr;
 import it.csi.sicee.siceebo.business.facade.exceptions.ServiceException;
@@ -58,8 +58,8 @@ public class ServiziMgr {
 	protected static Logger log = Logger.getLogger(Constants.APPLICATION_CODE
 			+ ".business.manager");
 	
-	private final String MODOL_RESOURCE = "/META-INF/defpd_modolsrv.xml";
-	private final String MODOL_PDF_RESOURCE = "/META-INF/defpd_modolpdfgeneratorsrv.xml";
+	//private final String MODOL_RESOURCE = "/META-INF/defpd_modolsrv.xml";
+	//private final String MODOL_PDF_RESOURCE = "/META-INF/defpd_modolpdfgeneratorsrv.xml";
 
 	protected CertificatoMgr certificatoMgr;
 	

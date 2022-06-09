@@ -237,6 +237,44 @@
 
 
 
+
+<s:if test="isMenuVisible('mnuStoricizzazioneLogAccesso')">
+	<s:if test="isMenuEnabled('mnuStoricizzazioneLogAccesso')">
+		<s:url id="targetUrlMnuStoricizzazioneLogAccesso" action="goToMnuStoricizzazioneLogAccessoFromMenu" namespace="/secure" includeParams="none" />
+		<li<s:if test="isMenuActive('mnuStoricizzazioneLogAccesso')"> id="current" class="active"</s:if>>
+			<s:a href="%{targetUrlMnuStoricizzazioneLogAccesso}" id="menu_items_mnuStoricizzazioneLogAccesso">
+				<s:text name="mnuStoricizzazioneLogAccesso.label" />
+			</s:a>
+		</li>
+	</s:if>
+	<s:else>
+		<li><s:text name="mnuStoricizzazioneLogAccesso.label" /></li>
+	</s:else>
+	
+
+</s:if>
+
+
+
+
+<s:if test="isMenuVisible('mnuRecuperaCoordinateLOCCSI')">
+	<s:if test="isMenuEnabled('mnuRecuperaCoordinateLOCCSI')">
+		<s:url id="targetUrlMnuRecuperaCoordinateLOCCSI" action="goToMnuRecuperaCoordinateLOCCSIFromMenu" namespace="/secure" includeParams="none" />
+		<li<s:if test="isMenuActive('mnuRecuperaCoordinateLOCCSI')"> id="current" class="active"</s:if>>
+			<s:a href="%{targetUrlMnuRecuperaCoordinateLOCCSI}" id="menu_items_mnuRecuperaCoordinateLOCCSI">
+				<s:text name="mnuRecuperaCoordinateLOCCSI.label" />
+			</s:a>
+		</li>
+	</s:if>
+	<s:else>
+		<li><s:text name="mnuRecuperaCoordinateLOCCSI.label" /></li>
+	</s:else>
+	
+
+</s:if>
+
+
+
 			</ul>
 		</li>
 	

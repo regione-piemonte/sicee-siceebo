@@ -24,6 +24,7 @@
 			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpAnnullaAceAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpSostitutiAceAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpDettaglioAttestatoAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/ricercaace/CpDocAggiuntivaAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/stampaace/CpStampaAceAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/stampaace/CpRisultatoAceStampaAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/main/CpHomeAction
@@ -33,6 +34,8 @@
 			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpTransazioniMdpAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpVerificheIndexAction
 			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpVerificheActaAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpStoricizzazioneLogAccessoAction
+			,it/csi/sicee/siceebo/presentation/siceebo/action/backoffice/CpRecuperaCoordinateLOCCSIAction
 	" />
 	<constant name="struts.multipart.parser" value="org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest" />
 	<!-- costanti per il fileUpload interceptor: settare solo se necessarie -->
@@ -210,6 +213,18 @@
 		<action name="goToMnuVerificaActaFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuVerificaActa">
 			<result name="GO_TO_cpVerificheActa" type="chain">
 				<param name="actionName">cpVerificheActa</param>
+				<param name="namespace">/base/backOffice</param>
+			</result>
+		</action>
+		<action name="goToMnuStoricizzazioneLogAccessoFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuStoricizzazioneLogAccesso">
+			<result name="GO_TO_cpStoricizzazioneLogAccesso" type="chain">
+				<param name="actionName">cpStoricizzazioneLogAccesso</param>
+				<param name="namespace">/base/backOffice</param>
+			</result>
+		</action>
+		<action name="goToMnuRecuperaCoordinateLOCCSIFromMenu" class="it.csi.sicee.siceebo.presentation.siceebo.action.MenuAction" method="goToMnuRecuperaCoordinateLOCCSI">
+			<result name="GO_TO_cpRecuperaCoordinateLOCCSI" type="chain">
+				<param name="actionName">cpRecuperaCoordinateLOCCSI</param>
 				<param name="namespace">/base/backOffice</param>
 			</result>
 		</action>

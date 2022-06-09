@@ -4,11 +4,7 @@
  *******************************************************************************/
 package it.csi.sicee.siceebo.business.dao.dto;
 
-import it.csi.sicee.siceebo.business.dao.dao.*;
-import it.csi.sicee.siceebo.business.dao.factory.*;
-import it.csi.sicee.siceebo.business.dao.exceptions.*;
 import java.io.Serializable;
-import java.util.*;
 import java.util.Date;
 
 public class SiceeTCertificato implements Serializable
@@ -293,6 +289,15 @@ public class SiceeTCertificato implements Serializable
 	 */
 	protected String cfUtenteSostituzione;
 	
+	/** 
+	 * This attribute maps to the column COORD_X_LONG_DD in the SICEE_T_CERTIFICATO table.
+	 */
+	protected Double coordXLongDd;
+
+	/** 
+	 * This attribute maps to the column COORD_Y_LAT_DD in the SICEE_T_CERTIFICATO table.
+	 */
+	protected Double coordYLatDd;
 	
 	/**
 	 * Method 'SiceeTCertificato'
@@ -1425,6 +1430,22 @@ public class SiceeTCertificato implements Serializable
 	}
 
 	
+	public Double getCoordXLongDd() {
+		return coordXLongDd;
+	}
+
+	public void setCoordXLongDd(Double coordXLongDd) {
+		this.coordXLongDd = coordXLongDd;
+	}
+
+	public Double getCoordYLatDd() {
+		return coordYLatDd;
+	}
+
+	public void setCoordYLatDd(Double coordYLatDd) {
+		this.coordYLatDd = coordYLatDd;
+	}
+
 	/**
 	 * Method 'equals'
 	 * 
@@ -1669,6 +1690,14 @@ public class SiceeTCertificato implements Serializable
 		if (cfUtenteSostituzione == null ? _cast.cfUtenteSostituzione != cfUtenteSostituzione : !cfUtenteSostituzione.equals( _cast.cfUtenteSostituzione )) {
 			return false;
 		}
+		
+		if (coordXLongDd == null ? _cast.coordXLongDd != coordXLongDd : !coordXLongDd.equals( _cast.coordXLongDd )) {
+			return false;
+		}
+		
+		if (coordYLatDd == null ? _cast.coordYLatDd != coordYLatDd : !coordYLatDd.equals( _cast.coordYLatDd)) {
+			return false;
+		}
 
 		return true;
 	}
@@ -1891,6 +1920,15 @@ public class SiceeTCertificato implements Serializable
 		if (cfUtenteSostituzione != null) {
 			_hashCode = 29 * _hashCode + cfUtenteSostituzione.hashCode();
 		}
+		
+		if (coordXLongDd != null) {
+			_hashCode = 29 * _hashCode + coordXLongDd.hashCode();
+		}
+		
+		if (coordYLatDd != null) {
+			_hashCode = 29 * _hashCode + coordYLatDd.hashCode();
+		}
+		
 		return _hashCode;
 	}
 
@@ -1967,6 +2005,8 @@ public class SiceeTCertificato implements Serializable
 		ret.append( ", rifCatasto=" + rifCatasto );
 		ret.append( ", codiceComuneCatastale=" + codiceComuneCatastale );
 		ret.append( ", cfUtenteSostituzione=" + cfUtenteSostituzione );
+		ret.append( ", coordXLongDd=" + coordXLongDd );
+		ret.append( ", coordYLatDd=" + coordYLatDd);
 		return ret.toString();
 	}
 

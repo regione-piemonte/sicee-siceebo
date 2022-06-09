@@ -7,6 +7,17 @@
 function initStdEnrichments4CpRisultatoAce() {
 	var contentPanelName = "cpRisultatoAce";
 
+	/// arricchimento di base per guigen::TextField [email]
+	var addBasicEnrichmentToEmail =
+		function(){
+			uiNRichLib.basicTextFieldNRich(
+				'widg_email',
+			 	false,
+			 	'java.lang.String',
+			 	null);
+		};
+	uiEnricherMgr.registerEnrichment(contentPanelName, "p_emailWidgetPanel", addBasicEnrichmentToEmail);
+
 }
 
 /**
@@ -43,6 +54,20 @@ function initUIStructCpRisultatoAce(){
             }
 ,            {
               name: "p_pPagamentoNav", panels: []
+            }
+,            {
+              name: "p_emailMultipanel", panels: [
+              {
+                name: "p_emailPanel", panels: [
+                {
+                  name: "p_emailWidgetPanel", panels: []
+                }
+,                {
+                  name: "p_CloseEmailPanel", panels: []
+                }
+                ]
+              }
+              ]
             }
             ]
           }

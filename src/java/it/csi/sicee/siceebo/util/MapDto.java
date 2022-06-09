@@ -19,23 +19,23 @@ import it.csi.sicee.siceebo.business.dao.dto.SiceeTImportDati2015;
 import it.csi.sicee.siceebo.business.facade.BaseMgr;
 import it.csi.sicee.siceebo.util.Constants;
 import it.csi.sicee.siceebo.util.Converter;
-import it.csi.sicee.siceeweb.xml.attestato.data.ImageJPG;
-import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClasseEnergetica;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClassificazioni;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCodiciREN;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliDettImpianti;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliEnEsportata;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoUnitaMisura;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClasseEnergetica.ClasseEnergetica;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClassificazioni.Classificazione;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCodiciREN.CodiceREN;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliDettImpianti.CombustibileDettImpianti;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliEnEsportata.CombustibileEnEsportata;
-import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoUnitaMisura.UnitaMisura;
-import it.csi.sicee.siceeweb.xml.attestato.data.PrestEnergImpiantiDocument.PrestEnergImpianti.ElencoFontiEnergetiche;
-import it.csi.sicee.siceeweb.xml.attestato.data.RowConsumiCombustibileDocument.RowConsumiCombustibile;
-import it.csi.sicee.siceeweb.xml.attestato.data.RowDatiCatastaliDocument.RowDatiCatastali;
+//import it.csi.sicee.siceeweb.xml.attestato.data.ImageJPG;
+//import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClasseEnergetica;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClassificazioni;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCodiciREN;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliDettImpianti;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliEnEsportata;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoUnitaMisura;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClasseEnergetica.ClasseEnergetica;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoClassificazioni.Classificazione;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCodiciREN.CodiceREN;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliDettImpianti.CombustibileDettImpianti;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoCombustibiliEnEsportata.CombustibileEnEsportata;
+//import it.csi.sicee.siceeweb.xml.attestato.data.DatiPrecompilatiDocument.DatiPrecompilati.ElencoUnitaMisura.UnitaMisura;
+//import it.csi.sicee.siceeweb.xml.attestato.data.PrestEnergImpiantiDocument.PrestEnergImpianti.ElencoFontiEnergetiche;
+//import it.csi.sicee.siceeweb.xml.attestato.data.RowConsumiCombustibileDocument.RowConsumiCombustibile;
+//import it.csi.sicee.siceeweb.xml.attestato.data.RowDatiCatastaliDocument.RowDatiCatastali;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -197,6 +197,7 @@ public class MapDto {
 		return apeDto;
 	}
 
+	/*
 	public static MODDocument mapToDatiGenerici(MODDocument modDoc, ApeDto apeDto){
 		log.debug("[MapDto::mapToDatiGenerici] start");
 		
@@ -207,18 +208,7 @@ public class MapDto {
 		
 		// stato modulo
 		String statoModulo = "";
-/*
-		if ((apeDto.getFkStato().intValue() == 1) && (apeDto.getIsBozzaDaXml() == false))
-			statoModulo = "BOZZA";
-		if ((apeDto.getFkStato().intValue() == 1) && (apeDto.getIsBozzaDaXml() == true))
-			statoModulo = "BOZZA_DA_XML";
-		else if (apeDto.getFkStato().intValue() == 2)
-			statoModulo = "CONSOLIDATO";
-		else if (apeDto.getFkStato().intValue() == 4)
-			statoModulo = "ANNULLATO";
-		else if (apeDto.getFkStato().intValue() == 5)
-			statoModulo = "CONSOLIDATO";
-*/
+
 		statoModulo = "CONSOLIDATO";
 		modDoc.getMOD().getAttestato().getDatiPrecompilati().setStatoModulo(statoModulo);
 		
@@ -243,8 +233,7 @@ public class MapDto {
 		// coordinate geografiche
 		java.math.BigDecimal coordN = Converter.convertToBigDecimal(apeDto.getCoordN());
 		java.math.BigDecimal coordE = Converter.convertToBigDecimal(apeDto.getCoordE());
-		/*
-		*/
+		
 		modDoc.getMOD().getAttestato().getDatiPrecompilati().setCoordinateGIS(coordN.toString() + " " + coordE.toString());
 
 		modDoc.getMOD().getAttestato().getDatiPrecompilati().setAnnoCostruzione(Converter.convertToString(apeDto.getAnnoCostruzione()));
@@ -291,7 +280,7 @@ public class MapDto {
 		log.debug("[MapDto::mapToDatiGenerici] end");
 		return modDoc;
 	}
-
+	*/
 	/* Non serve più: teniamolo ancora un po' per eventuali usi futuri */
 //	public static MODDocument mapToFoto(MODDocument modDoc, String indexImage){
 //		log.debug("[MapDto::mapToFoto] start");
@@ -312,6 +301,7 @@ public class MapDto {
 //		return modDoc;
 //	}
 
+	/*
 	public static MODDocument mapToDatiCatastali(MODDocument modDoc, ApeDto apeDto){
 		log.debug("[MapDto::mapToDatiCatastali] start");
 		// sezione dati catastali
@@ -382,26 +372,8 @@ public class MapDto {
 		return modDoc;
 	}
 
-/*
-	public static MODDocument mapToElencoZoneClimatiche(MODDocument modDoc, List<SiceeDZonaClimatica2015> elencoZoneClimatiche){
-		log.debug("[MapDto::mapToElencoZoneClimatiche] start");
-		
-		ElencoZoneClimatiche e = ElencoZoneClimatiche.Factory.newInstance();
-		ZonaClimatica zonaClimatica = null;
-		List<ZonaClimatica> zonaClimaticaList = e.getZonaClimaticaList();
-		for (SiceeDZonaClimatica2015 zc : elencoZoneClimatiche) {
-			zonaClimatica = ZonaClimatica.Factory.newInstance();
-			zonaClimatica.setCodice(zc.getCodZona());
-			zonaClimatica.setDescrizione(zc.getCodZona());
-			zonaClimaticaList.add(zonaClimatica);
-	    }		
-		
-		modDoc.getMOD().getAttestato().getDatiPrecompilati().setElencoZoneClimatiche(e);
-		
-		log.debug("[MapDto::mapToElencoZoneClimatiche] end");
-		return modDoc;
-	}
-*/
+
+
 	public static MODDocument mapToElencoUnitaMisura(MODDocument modDoc, List<SiceeDUnitaMisura2015> elencoUnitaMisura){
 		log.debug("[MapDto::mapToElencoUnitaMisura] start");
 		
@@ -447,36 +419,8 @@ public class MapDto {
 		log.debug("[MapDto::mapToElencoClasseEnergetica] end");
 		return modDoc;
 	}
-/*	
-	public static MODDocument mapToElencoTipiImpProdAcquaCalda(MODDocument modDoc){
-		log.debug("[MapDto::mapToElencoTipiImpProdAcquaCalda] start");
-		
-		ElencoTipiImpProdFontiRinn e = ElencoTipiImpProdFontiRinn.Factory.newInstance();
-		TipoImpianto tipoImpianto = null;
-		List<TipoImpianto> tipoImpiantoList = e.getTipoImpiantoList();
-		tipoImpianto = TipoImpianto.Factory.newInstance();
-		tipoImpianto.setCodice(new BigInteger("1"));
-		tipoImpianto.setDescrizione("Biomassa");
-		tipoImpiantoList.add(tipoImpianto);
-		tipoImpianto = TipoImpianto.Factory.newInstance();
-		tipoImpianto.setCodice(new BigInteger("2"));
-		tipoImpianto.setDescrizione("Collettori solari");
-		tipoImpiantoList.add(tipoImpianto);
-		tipoImpianto = TipoImpianto.Factory.newInstance();
-		tipoImpianto.setCodice(new BigInteger("3"));
-		tipoImpianto.setDescrizione("Fotovoltaico");
-		tipoImpiantoList.add(tipoImpianto);
-		tipoImpianto = TipoImpianto.Factory.newInstance();
-		tipoImpianto.setCodice(new BigInteger("4"));
-		tipoImpianto.setDescrizione("Minieolico");
-		tipoImpiantoList.add(tipoImpianto);	
-		
-		modDoc.getMOD().getAttestato().getDatiPrecompilati().setElencoTipiImpProdFontiRinn(e);
-		
-		log.debug("[MapDto::mapToElencoTipiImpProdAcquaCalda] end");
-		return modDoc;
-	}
-*/
+
+
 	public static MODDocument mapToElencoCodiciREN(MODDocument modDoc, List<SiceeDRiqEner2015> elencoCodiciREN){
 		log.debug("[MapDto::mapToElencoCodiciREN] start");
 		
@@ -564,5 +508,5 @@ public class MapDto {
 		log.debug("[MapDto::mapToElencoConsumiCombustibile] end");
 		return modDoc;
 	}
-
+*/
 }

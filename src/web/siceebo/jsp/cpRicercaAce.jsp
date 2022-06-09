@@ -147,6 +147,15 @@
 
 			
 	
+	
+<s:include value="/jsp/userpanels/cpRicercaAce_udpMappa.jsp"></s:include>
+
+	
+
+
+
+			
+	
 	<div id="p_wpMotivazioneCTU" class="widgetsPanelBlock"><!-- startFragment:p_wpMotivazioneCTU -->
 	
 	
