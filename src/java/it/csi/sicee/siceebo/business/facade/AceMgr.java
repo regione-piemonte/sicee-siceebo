@@ -9,44 +9,19 @@ package it.csi.sicee.siceebo.business.facade;
 
 
 import it.csi.sicee.siceebo.business.BEException;
-import it.csi.sicee.siceebo.business.dao.dao.OptimizedFindCertificatoriDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeDClasseEnergeticaDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeDDestUso2015Dao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeDDestUsoDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeDMotivoRilascioDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeDStatoCertDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeLRicercheCtuDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeTCertificatoDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeTExportBoDao;
-import it.csi.sicee.siceebo.business.dao.dao.SiceeTParametriDao;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeDClasseEnergetica;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeDDestUso;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeDDestUso2015;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeDMotivoRilascio;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeDStatoCert;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeLRicercheCtu;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertXml2015;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificato;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificatoPk;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTCertificatore;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTExportBo;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTExportBoPk;
-import it.csi.sicee.siceebo.business.dao.dto.SiceeTParametri;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeDClasseEnergeticaDaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeDDestUso2015DaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeDDestUsoDaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeDMotivoRilascioDaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTCertificatoDaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTExportBoDaoException;
-import it.csi.sicee.siceebo.business.dao.exceptions.SiceeTParametriDaoException;
+import it.csi.sicee.siceebo.business.dao.dao.*;
+import it.csi.sicee.siceebo.business.dao.dto.*;
+import it.csi.sicee.siceebo.business.dao.exceptions.*;
 import it.csi.sicee.siceebo.business.facade.exceptions.ServiceException;
 import it.csi.sicee.siceebo.dto.LabelValue;
 import it.csi.sicee.siceebo.dto.ace.Ace;
+import it.csi.sicee.siceebo.dto.ace.DocumentoAggiuntivo;
 import it.csi.sicee.siceebo.dto.ace.FiltroRicercaAce;
 import it.csi.sicee.siceebo.util.Constants;
 import it.csi.sicee.siceebo.util.GenericUtil;
-import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
+//import it.csi.sicee.siceeweb.xml.attestato.data.MODDocument;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -88,6 +63,11 @@ public class AceMgr extends BaseMgr {
 	/** The sicee t parametri dao. */
 	private SiceeTParametriDao siceeTParametriDao;
 
+	private SiceeTDocAggiuntivaDao siceeTDocAggiuntivaDao;
+
+	private SiceeDTipoDocAggDao siceeDTipoDocAggDao;
+
+
 	/**
 	 * Gets the sicee t parametri dao.
 	 *
@@ -95,6 +75,22 @@ public class AceMgr extends BaseMgr {
 	 */
 	public SiceeTParametriDao getSiceeTParametriDao() {
 		return this.siceeTParametriDao;
+	}
+
+	public SiceeTDocAggiuntivaDao getSiceeTDocAggiuntiva() {
+		return this.siceeTDocAggiuntivaDao;
+	}
+
+	public SiceeDTipoDocAggDao getSiceeDTipoDocAggDao() {
+		return siceeDTipoDocAggDao;
+	}
+
+	public void setSiceeDTipoDocAggDao(SiceeDTipoDocAggDao siceeDTipoDocAggDao) {
+		this.siceeDTipoDocAggDao = siceeDTipoDocAggDao;
+	}
+
+	public void setSiceeTDocAggiuntivaDao(SiceeTDocAggiuntivaDao siceeTDocAggiuntivaDao) {
+		this.siceeTDocAggiuntivaDao = siceeTDocAggiuntivaDao;
 	}
 
 	/**
@@ -371,7 +367,7 @@ private SiceeDMotivoRilascioDao siceeDMotivoRilascioDao;
 	 */
 	public Ace mapFromDBOAce(SiceeTExportBo dto){
 		Ace ris = new Ace();
-		
+
 		ris.setIdCertificatore(dto.getIdCertificatore());
 		
 		
@@ -1110,15 +1106,52 @@ private SiceeDMotivoRilascioDao siceeDMotivoRilascioDao;
 
 			SiceeTExportBoPk exportBoPk = new SiceeTExportBoPk(id, prog, anno);
 			SiceeTExportBo tExportBo = getSiceeTExportBoDao().findAceByPrimaryKey(exportBoPk, isOld);
-			
-			
 
-			return mapFromDBOAce(tExportBo);
+			return tExportBo != null ? mapFromDBOAce(tExportBo) : null;
 		} catch (SiceeTExportBoDaoException e) {
 			throw new BEException("Erorre nella ricerca del certificato ", e);
 		}
 	}
-	
+
+	public ArrayList<DocumentoAggiuntivo> findDocumentiAggiuntiviByAce(String idCertificatore, String progrCertificato, String anno) throws SiceeTDocAggiuntivaDaoException {
+		List<SiceeTDocAggiuntiva> docAggiuntiva= getSiceeTDocAggiuntiva().findByApe(idCertificatore,progrCertificato,anno);
+		log.debug("#######doc aggiuntiva from db: "+docAggiuntiva);
+		ArrayList<DocumentoAggiuntivo> documenti= new ArrayList<>();
+		if(!docAggiuntiva.isEmpty()){
+			documenti = mapFromDocAggiuntiva(docAggiuntiva);
+		}
+		log.debug("#######documenti: "+documenti);
+		return documenti;
+	}
+
+	public ArrayList<DocumentoAggiuntivo> mapFromDocAggiuntiva(List<SiceeTDocAggiuntiva> docAggiuntiva) throws SiceeTDocAggiuntivaDaoException {
+		ArrayList<DocumentoAggiuntivo> documenti= new ArrayList<>();
+		for(SiceeTDocAggiuntiva doc:docAggiuntiva){
+			DocumentoAggiuntivo documento = mapDocAggiuntiva(doc);
+			documenti.add(documento);
+		}
+		return documenti;
+	}
+
+	public DocumentoAggiuntivo mapDocAggiuntiva(SiceeTDocAggiuntiva doc) throws SiceeTDocAggiuntivaDaoException {
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		DocumentoAggiuntivo documento = new DocumentoAggiuntivo();
+		documento.setId(doc.getIdDocAggiuntiva());
+		documento.setNomeDocumento(doc.getNomeDocOriginale());
+		SiceeDTipoDocAgg tipoDocAgg = getSiceeDTipoDocAggDao().findByPrimaryKey(doc.getIdTipoDocAgg());
+		if(tipoDocAgg != null)
+			documento.setTipoDocumento(tipoDocAgg.getDescTipoDocAgg());
+		if(doc.getDtDelete()!=null)
+			documento.setStatoDocumento(Constants.DOC_AGGIUNTIVA_CANCELLATA);
+		else
+			documento.setStatoDocumento(Constants.DOC_AGGIUNTIVA_ATTIVA);
+
+		if(doc.getDtUpload()!=null)
+			documento.setDataUpload(format.format(doc.getDtUpload()));
+
+		return documento;
+	}
+
 	/** The sicee d stato cert dao. */
 	private SiceeDStatoCertDao siceeDStatoCertDao;
 	
@@ -1139,6 +1172,7 @@ private SiceeDMotivoRilascioDao siceeDMotivoRilascioDao;
 	public void setSiceeDStatoCertDao(SiceeDStatoCertDao siceeDStatoCertDao) {
 		this.siceeDStatoCertDao = siceeDStatoCertDao;
 	}
+
 
 	
 		/*

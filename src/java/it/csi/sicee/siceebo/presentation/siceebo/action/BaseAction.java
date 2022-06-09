@@ -323,6 +323,12 @@ public abstract class BaseAction<T extends BaseSessionAwareDTO> extends ActionSu
 		MenuStructure mnuVerificaActaMenu = new MenuStructure("mnuVerificaActa");
 
 		mnuBackOfficeMenu.getSubmenus().add(mnuVerificaActaMenu);
+		MenuStructure mnuStoricizzazioneLogAccessoMenu = new MenuStructure("mnuStoricizzazioneLogAccesso");
+
+		mnuBackOfficeMenu.getSubmenus().add(mnuStoricizzazioneLogAccessoMenu);
+		MenuStructure mnuRecuperaCoordinateLOCCSIMenu = new MenuStructure("mnuRecuperaCoordinateLOCCSI");
+
+		mnuBackOfficeMenu.getSubmenus().add(mnuRecuperaCoordinateLOCCSIMenu);
 
 		menuMap.add(mnuBackOfficeMenu);
 

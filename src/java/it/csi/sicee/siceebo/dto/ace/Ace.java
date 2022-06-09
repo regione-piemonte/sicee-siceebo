@@ -1829,6 +1829,48 @@ public class Ace implements java.io.Serializable {
 		return flgTracciato;
 	}
 
+	/// Field [dtSostituzione]
+	private java.lang.String dtSostituzione = null;
+
+	/**
+	 * imposta il valore del campo [dtSostituzione]
+	 * @param val
+	 * @generated
+	 */
+
+	public void setDtSostituzione(java.lang.String val) {
+		dtSostituzione = val;
+	}
+
+	/**
+	 * legge il valore del campo [dtSostituzione]
+	 * @generated
+	 */
+	public java.lang.String getDtSostituzione() {
+		return dtSostituzione;
+	}
+
+	/// Field [motivoSostituzione]
+	private java.lang.String motivoSostituzione = null;
+
+	/**
+	 * imposta il valore del campo [motivoSostituzione]
+	 * @param val
+	 * @generated
+	 */
+
+	public void setMotivoSostituzione(java.lang.String val) {
+		motivoSostituzione = val;
+	}
+
+	/**
+	 * legge il valore del campo [motivoSostituzione]
+	 * @generated
+	 */
+	public java.lang.String getMotivoSostituzione() {
+		return motivoSostituzione;
+	}
+
 	// il serial version uid e' fisso in quanto la classe in oggetto e' serializzabile
 	// solo per la clusterizzazione della sessione web e non viene scambiata con altre
 	// componenti.

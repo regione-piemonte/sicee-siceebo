@@ -236,6 +236,46 @@ public class CpRisultatoAceAction extends AbstractCPAction<CpRisultatoAceModel>
 
 	}
 
+	/**
+	 * Gestione dell'evento CLICKED sul widget [bScaricaXml]
+	 */
+	@MethodProtection(level = "REJECT_SAME")
+	public String handleBScaricaXml_CLICKED() throws CommandExecutionException {
+
+		return handleEventInternal("ricercaace", "cprisultatoace", "bScaricaXml", "CLICKED");
+
+	}
+
+	/**
+	 * Gestione dell'evento CLICKED sul widget [bDocAgg]
+	 */
+	@MethodProtection(level = "REJECT_SAME")
+	public String handleBDocAgg_CLICKED() throws CommandExecutionException {
+
+		return handleEventInternal("ricercaace", "cprisultatoace", "bDocAgg", "CLICKED");
+
+	}
+
+	/**
+	 * Gestione dell'evento CLICKED sul widget [closeEmailForm]
+	 */
+	@MethodProtection(level = "REJECT_SAME")
+	public String handleCloseEmailForm_CLICKED() throws CommandExecutionException {
+
+		return handleEventInternal("ricercaace", "cprisultatoace", "closeEmailForm", "CLICKED");
+
+	}
+
+	/**
+	 * Gestione dell'evento CLICKED sul widget [inviaEmailZipXmlApe]
+	 */
+	@MethodProtection(level = "REJECT_SAME")
+	public String handleInviaEmailZipXmlApe_CLICKED() throws CommandExecutionException {
+
+		return handleEventInternal("ricercaace", "cprisultatoace", "inviaEmailZipXmlApe", "CLICKED");
+
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////
 	/// metodo di data providing sull'intero ContentPanel
 	/// metodo: provide_CPDATA

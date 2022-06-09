@@ -130,7 +130,6 @@
 	<div id="p_fpRisultatoAce" class="formPanelBlock"><!-- startFragment:p_fpRisultatoAce -->
 		
 	
-<div class="formPanel" id="fpRisultatoAce">
 
 
 	
@@ -386,6 +385,46 @@ decorator="it.csi.sicee.siceebo.presentation.decorator.ricercaace.CpRisultatoAce
 	
 
 
+		
+<s:if test="isWidgetVisible('cpRisultatoAce','bScaricaXml')" >
+
+	
+
+
+
+<!-- widget bScaricaXml -->
+<s:submit name="widg_bScaricaXml" id="widg_bScaricaXml" method="handleBScaricaXml_CLICKED"
+	key="cpRisultatoAce.bScaricaXml.label" cssClass="buttonWidget"
+	disabled="isWidgetDisabled('cpRisultatoAce','bScaricaXml')" />
+
+	
+
+
+</s:if>
+
+	
+
+
+		
+<s:if test="isWidgetVisible('cpRisultatoAce','bDocAgg')" >
+
+	
+
+
+
+<!-- widget bDocAgg -->
+<s:submit name="widg_bDocAgg" id="widg_bDocAgg" method="handleBDocAgg_CLICKED"
+	key="cpRisultatoAce.bDocAgg.label" cssClass="buttonWidget"
+	disabled="isWidgetDisabled('cpRisultatoAce','bDocAgg')" />
+
+	
+
+
+</s:if>
+
+	
+
+
 	</div>
 	
 	
@@ -436,11 +475,22 @@ decorator="it.csi.sicee.siceebo.presentation.decorator.ricercaace.CpRisultatoAce
 
 	<!-- endFragment:p_pPagamentoNav --></div>
 
+			
+	
+	
+	<div id="p_emailMultipanel" class="panelBlock"><!-- startFragment:p_emailMultipanel -->
+		
+
+		
+<s:if test="#session.cpRisultatoAce_emailMultipanel_selectedMultiPanel == 'cpRisultatoAce_emailMultipanel_emailPanel'">
+	<s:include value="/jsp/multipanels/cpRisultatoAce_emailMultipanel_emailPanel.jsp" ></s:include>
+</s:if>
+	<!-- endFragment:p_emailMultipanel --></div>
+
 	
 
 		
 	
-</div>
 
 	<!-- endFragment:p_fpRisultatoAce --></div>
 

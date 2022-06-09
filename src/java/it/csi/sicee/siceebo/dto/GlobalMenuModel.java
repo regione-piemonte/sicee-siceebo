@@ -60,21 +60,39 @@ public class GlobalMenuModel extends BaseSessionAwareDTO {
 	}
 
 	/**
-	 * imposta il valore dell' ApplicationData 'appDataidCertificatoreSel'
+	 * imposta il valore dell' ApplicationData 'appDataaceList'
 	 * @param value
 	 * @generated
 	 */
 
-	public void setAppDataidCertificatoreSel(java.lang.String value) {
-		getSession().put("appDataidCertificatoreSel", value);
+	public void setAppDataaceList(java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace> value) {
+		getSession().put("appDataaceList", value);
 	}
 
 	/**
-	 * legge il valore dell' ApplicationData 'appDataidCertificatoreSel'
+	 * legge il valore dell' ApplicationData 'appDataaceList'
 	 * @generated
 	 */
-	public java.lang.String getAppDataidCertificatoreSel() {
-		return (java.lang.String) (getSession().get("appDataidCertificatoreSel"));
+	public java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace> getAppDataaceList() {
+		return (java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace>) (getSession().get("appDataaceList"));
+	}
+
+	/**
+	 * imposta il valore dell' ApplicationData 'appDatauidDaStampare'
+	 * @param value
+	 * @generated
+	 */
+
+	public void setAppDatauidDaStampare(java.lang.String value) {
+		getSession().put("appDatauidDaStampare", value);
+	}
+
+	/**
+	 * legge il valore dell' ApplicationData 'appDatauidDaStampare'
+	 * @generated
+	 */
+	public java.lang.String getAppDatauidDaStampare() {
+		return (java.lang.String) (getSession().get("appDatauidDaStampare"));
 	}
 
 	/**
@@ -116,57 +134,21 @@ public class GlobalMenuModel extends BaseSessionAwareDTO {
 	}
 
 	/**
-	 * imposta il valore dell' ApplicationData 'appDatacodAttestatoDaStampare'
+	 * imposta il valore dell' ApplicationData 'appDataidCertificatoreSel'
 	 * @param value
 	 * @generated
 	 */
 
-	public void setAppDatacodAttestatoDaStampare(java.lang.String value) {
-		getSession().put("appDatacodAttestatoDaStampare", value);
+	public void setAppDataidCertificatoreSel(java.lang.String value) {
+		getSession().put("appDataidCertificatoreSel", value);
 	}
 
 	/**
-	 * legge il valore dell' ApplicationData 'appDatacodAttestatoDaStampare'
+	 * legge il valore dell' ApplicationData 'appDataidCertificatoreSel'
 	 * @generated
 	 */
-	public java.lang.String getAppDatacodAttestatoDaStampare() {
-		return (java.lang.String) (getSession().get("appDatacodAttestatoDaStampare"));
-	}
-
-	/**
-	 * imposta il valore dell' ApplicationData 'appDatauidDaStampare'
-	 * @param value
-	 * @generated
-	 */
-
-	public void setAppDatauidDaStampare(java.lang.String value) {
-		getSession().put("appDatauidDaStampare", value);
-	}
-
-	/**
-	 * legge il valore dell' ApplicationData 'appDatauidDaStampare'
-	 * @generated
-	 */
-	public java.lang.String getAppDatauidDaStampare() {
-		return (java.lang.String) (getSession().get("appDatauidDaStampare"));
-	}
-
-	/**
-	 * imposta il valore dell' ApplicationData 'appDataaceList'
-	 * @param value
-	 * @generated
-	 */
-
-	public void setAppDataaceList(java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace> value) {
-		getSession().put("appDataaceList", value);
-	}
-
-	/**
-	 * legge il valore dell' ApplicationData 'appDataaceList'
-	 * @generated
-	 */
-	public java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace> getAppDataaceList() {
-		return (java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.Ace>) (getSession().get("appDataaceList"));
+	public java.lang.String getAppDataidCertificatoreSel() {
+		return (java.lang.String) (getSession().get("appDataidCertificatoreSel"));
 	}
 
 	/**
@@ -187,6 +169,24 @@ public class GlobalMenuModel extends BaseSessionAwareDTO {
 	public it.csi.sicee.siceebo.dto.certificatori.FiltroRicercaCertificatori getAppDataricercaCertificatori() {
 		return (it.csi.sicee.siceebo.dto.certificatori.FiltroRicercaCertificatori) (getSession()
 				.get("appDataricercaCertificatori"));
+	}
+
+	/**
+	 * imposta il valore dell' ApplicationData 'appDatacodAttestatoDaStampare'
+	 * @param value
+	 * @generated
+	 */
+
+	public void setAppDatacodAttestatoDaStampare(java.lang.String value) {
+		getSession().put("appDatacodAttestatoDaStampare", value);
+	}
+
+	/**
+	 * legge il valore dell' ApplicationData 'appDatacodAttestatoDaStampare'
+	 * @generated
+	 */
+	public java.lang.String getAppDatacodAttestatoDaStampare() {
+		return (java.lang.String) (getSession().get("appDatacodAttestatoDaStampare"));
 	}
 
 }

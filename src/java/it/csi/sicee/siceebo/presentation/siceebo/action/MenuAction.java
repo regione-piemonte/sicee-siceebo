@@ -306,6 +306,54 @@ public class MenuAction extends BaseAction<GlobalMenuModel> implements ModelDriv
 		}
 	}
 
+	/**
+	 * 
+	 * @return SUCCESS result.
+	 */
+	public String goToMnuStoricizzazioneLogAccesso() throws CommandExecutionException {
+
+		// gestione degli eventi di tipo CLICKED
+		ICommand action = initCommand(null, "global", "mnuStoricizzazioneLogAccesso", "CLICKED");
+		String result = action.doCommand(this);
+		if (result != null) {
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("[MenuAction::goToMnuStoricizzazioneLogAccesso] returning result [" + result + "]");
+			}
+			setActiveMenu("mnuStoricizzazioneLogAccesso");
+			return result;
+		} else {
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("[MenuAction::goToMnuStoricizzazioneLogAccesso] returning default result [SUCCESS]");
+			}
+			setActiveMenu("mnuStoricizzazioneLogAccesso");
+			return SUCCESS;
+		}
+	}
+
+	/**
+	 * 
+	 * @return SUCCESS result.
+	 */
+	public String goToMnuRecuperaCoordinateLOCCSI() throws CommandExecutionException {
+
+		// gestione degli eventi di tipo CLICKED
+		ICommand action = initCommand(null, "global", "mnuRecuperaCoordinateLOCCSI", "CLICKED");
+		String result = action.doCommand(this);
+		if (result != null) {
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("[MenuAction::goToMnuRecuperaCoordinateLOCCSI] returning result [" + result + "]");
+			}
+			setActiveMenu("mnuRecuperaCoordinateLOCCSI");
+			return result;
+		} else {
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("[MenuAction::goToMnuRecuperaCoordinateLOCCSI] returning default result [SUCCESS]");
+			}
+			setActiveMenu("mnuRecuperaCoordinateLOCCSI");
+			return SUCCESS;
+		}
+	}
+
 	public static final String ACTIVE_MENU_ATTRNAME = "active_menu";
 
 	public void setActiveMenu(String menuName) {

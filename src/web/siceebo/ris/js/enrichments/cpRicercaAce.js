@@ -697,6 +697,10 @@ function initUIStructCpRicercaAce(){
               ]
             }
 ,            {
+              name: "p_udpMappa", panels: [
+              ]
+            }
+,            {
               name: "p_wpMotivazioneCTU", panels: []
             }
 ,            {

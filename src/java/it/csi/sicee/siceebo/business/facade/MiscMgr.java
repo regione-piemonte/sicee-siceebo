@@ -694,7 +694,7 @@ public class MiscMgr extends BaseMgr {
 		SiceeTPartecipante2015Pk pk = null;
 
 		partecipanteDb.setFkCorso(partecipante.getFkCorso());
-		partecipanteDb.setCodiceFiscale(partecipante.getCodiceFiscale());
+		partecipanteDb.setCodiceFiscale(partecipante.getCodiceFiscale()!=null?partecipante.getCodiceFiscale().trim():partecipante.getCodiceFiscale());
 		partecipanteDb.setNome(partecipante.getNome());
 		partecipanteDb.setCognome(partecipante.getCognome());
 		partecipanteDb.setLuogoNascita(partecipante.getLuogoNascita());
@@ -724,7 +724,7 @@ public class MiscMgr extends BaseMgr {
 
 		partecipanteDb.setIdPartecipante(partecipante.getIdPartecipante());
 		partecipanteDb.setFkCorso(partecipante.getFkCorso());
-		partecipanteDb.setCodiceFiscale(partecipante.getCodiceFiscale());
+		partecipanteDb.setCodiceFiscale(partecipante.getCodiceFiscale()!=null?partecipante.getCodiceFiscale().trim():partecipante.getCodiceFiscale());
 		partecipanteDb.setNome(partecipante.getNome());
 		partecipanteDb.setCognome(partecipante.getCognome());
 		partecipanteDb.setLuogoNascita(partecipante.getLuogoNascita());
@@ -858,6 +858,9 @@ public class MiscMgr extends BaseMgr {
 		email.setDestinatario(this.getParametro(Constants.EMAIL_NOTIFICA));
 		email.setHost(this.getParametro(Constants.MAIL_HOST));
 		email.setPort(this.getParametro(Constants.MAIL_PORT));
+		email.setIdEmail(this.getParametro(Constants.MAIL_USER));
+		email.setPassword(this.getParametro(Constants.MAIL_PWD));
+		
 		email.setMittente(this.getParametro(Constants.MAIL_MITT_NOTIFICA));
 
 		email.setOggetto(this.creaOggettoEmailNotifica(bloccoCert));
@@ -895,6 +898,8 @@ public class MiscMgr extends BaseMgr {
 		email.setDestinatario(this.getParametro(Constants.EMAIL_NOTIFICA));
 		email.setHost(this.getParametro(Constants.MAIL_HOST));
 		email.setPort(this.getParametro(Constants.MAIL_PORT));
+		email.setIdEmail(this.getParametro(Constants.MAIL_USER));
+		email.setPassword(this.getParametro(Constants.MAIL_PWD));
 		email.setMittente(this.getParametro(Constants.MAIL_MITT_NOTIFICA));
 
 		email.setOggetto(this.getParametro(Constants.OGGETTO_MAIL_NOTIFICA_RIATTIVAZIONE));
@@ -933,6 +938,8 @@ public class MiscMgr extends BaseMgr {
 		email.setDestinatario(this.getParametro(Constants.EMAIL_NOTIFICA));
 		email.setHost(this.getParametro(Constants.MAIL_HOST));
 		email.setPort(this.getParametro(Constants.MAIL_PORT));
+		email.setIdEmail(this.getParametro(Constants.MAIL_USER));
+		email.setPassword(this.getParametro(Constants.MAIL_PWD));
 		email.setMittente(this.getParametro(Constants.MAIL_MITT_NOTIFICA));
 
 		email.setOggetto("SIPEE - ATTENZIONE errore annullamento APE scaduti ");

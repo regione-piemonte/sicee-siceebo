@@ -193,6 +193,10 @@ public final class Constants {
 	public static final String EMAIL_NOTIFICA = "EMAIL_NOTIFICA";
 	public static final String MAIL_HOST = "MAIL_HOST";
 	public static final String MAIL_PORT = "MAIL_PORT";
+	public static final String MAIL_USER = "MAIL_USER";
+	public static final String MAIL_PWD = "MAIL_PWD";
+
+	
 	public static final String MAIL_MITT_NOTIFICA = "MITTENTE_EMAIL_NOTIFICA";
 	public static final String OGGETTO_MAIL_NOTIFICA_RADIATO = "OGGETTO_MAIL_NOTIFICA_RADIATO";
 	public static final String TESTO_MAIL_NOTIFICA_RADIATO_TXT = "TESTO_MAIL_NOTIFICA_RADIATO_TXT";
@@ -220,6 +224,7 @@ public final class Constants {
 	public static final String TESTO_MAIL_NOTIFICA_ALTRO_HTML = "TESTO_MAIL_NOTIFICA_ALTRO_HTML";
 
 	public static final String SERVIZIO_ATTIVO_ANNULLA_CERT_SCADUTI = "SERVIZIO_ATTIVO_ANNULLA_CERT_SCADUTI";
+	public static final String LINK_MAPPA_WMS = "LINK_MAPPA_WMS";
 
 	public static final String COGNOME_CERTIFICATORE = "@cognome.certificatore@";
 	public static final String NOME_CERTIFICATORE = "@nome.certificatore@";
@@ -267,6 +272,10 @@ public final class Constants {
 
 	public static final String DESC_MOTIVO_ANNULLAMENTO_AUTO_SCADENZA = "Annullamento automatico per avvenuta scadenza";
 	public static final String DESC_MOTIVO_ANNULLAMENTO_SCADENZA = "Annullato da BO per scadenza";
+
+	public static final String CHIAVE_CONFIG_N_RECORD_AGGIORNA_COORD = "N_RECORD_AGGIORNA_COORD";
+	public static final String DOC_AGGIUNTIVA_CANCELLATA = "CANCELLATO";
+	public static final String DOC_AGGIUNTIVA_ATTIVA = "ATTIVO";
 
 	// E-MAIL stuff - end
 

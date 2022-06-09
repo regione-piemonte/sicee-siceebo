@@ -191,6 +191,44 @@ public class CpRisultatoAceModel extends BaseSessionAwareDTO {
 		return (java.lang.String) (getSession().get("appDatamsgGenerico"));
 	}
 
+	/**
+	 * imposta il valore dell' ApplicationData 'appDataemailInvioApe'
+	 * @param value
+	 * @generated
+	 */
+
+	public void setAppDataemailInvioApe(java.lang.String value) {
+		getSession().put("appDataemailInvioApe", value);
+	}
+
+	/**
+	 * legge il valore dell' ApplicationData 'appDataemailInvioApe'
+	 * @generated
+	 */
+	public java.lang.String getAppDataemailInvioApe() {
+		return (java.lang.String) (getSession().get("appDataemailInvioApe"));
+	}
+
+	/**
+	 * imposta il valore dell' ApplicationData 'appDatalistDocumentazioneAggiuntiva'
+	 * @param value
+	 * @generated
+	 */
+
+	public void setAppDatalistDocumentazioneAggiuntiva(
+			java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.DocumentoAggiuntivo> value) {
+		getSession().put("appDatalistDocumentazioneAggiuntiva", value);
+	}
+
+	/**
+	 * legge il valore dell' ApplicationData 'appDatalistDocumentazioneAggiuntiva'
+	 * @generated
+	 */
+	public java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.DocumentoAggiuntivo> getAppDatalistDocumentazioneAggiuntiva() {
+		return (java.util.ArrayList<it.csi.sicee.siceebo.dto.ace.DocumentoAggiuntivo>) (getSession()
+				.get("appDatalistDocumentazioneAggiuntiva"));
+	}
+
 	////////////////////////////////////////////////////////////////////
 	/// campi per widget semplici
 	////////////////////////////////////////////////////////////////////
